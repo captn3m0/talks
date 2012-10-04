@@ -1,0 +1,347 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>UX &amp; Usability Designing</title>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!--		<link rel="stylesheet" href="css/reset.css">-->
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>UX &amp; Usability Designing</h1>
+					<h3 class="inverted">- Abhay Rana (me@captnemo.in)</h3>
+					<script>
+						// Delicously hacky. Look away.
+						if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+					</script>
+				</section>
+				<section>
+					<section>
+						<h2>Types Of Designing</h2>
+						<h3>Informational Design</h3>
+						<ul>
+							<li>Posters</li>
+							<li>Notices</li>
+							<li>Content Websites</li>	
+						</ul>
+						<br><br>
+						<h3>Interactive Design</h3>
+						<ul>
+							<li>User-oriented</li>
+							<li>Interactive</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Informational Design</h2>
+						<img src="chrome.jpg">
+						<br><small>http://www.flickr.com/photos/ell-r-brown/5308119110/sizes/m/</small>
+					</section>
+					<Section>
+						<h2>Interactive Design</h2>
+						<img src="hangout.png">
+						<br><small>https://plus.google.com/hangouts/</small>
+						
+					</section>
+					<section>
+						<h2>Youtube Leanback</h2>
+						<img src="yt-2.png"><br>	
+						<small>http://www.youtube.com/leanback</small>
+					</section>
+					<section>
+						<h2>Postbox App</h2>
+						<img src="postbox.png"><br>
+						<small>http://www.postbox-inc.com/</small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2 style="margin-top:-100px">Why do we need this?</h2>
+						<img src="amazon-1.jpg" />
+						<img src="amazon-3.jpg" />
+						<img src="amazon-4.jpg" />
+						<img src="amazon-6.jpg" />
+						<img src="amazon-7.png" />
+						<br><small>Amazon circa 2001, 2003, 2005, 2007, 2011 via archive.org</small>
+					</section>
+					<section>
+						<h2>Multi-Level Menus</h2>
+						<img src="amazon-5.jpg">
+					</section>
+					<section>
+						<h2>Flipkart.com</h2>
+						<img src="flipkart-1.jpg">
+					</section>
+					<section>
+						<h2>Indiaplaza.in</h2>
+						<img src="indiaplaza.in.jpg">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Interface Oriented Designing</h2>
+						<p>Some examples of interfaces ? </p>
+					</section>
+					<section>
+						<h2>Touch Based Interfaces</h2>
+						<img src="ios-1.jpg"><br>
+						<small>http://itunes.apple.com/gb/app/dvd-profiler-for-ios/id408455612?mt=8</small>
+					</section>
+					<section>
+						<h3>Touchable Websites</h2>
+						<img src="flipkart-2.jpg">
+					</section>
+					<section>
+						<h3>Command Line ?</h2>
+						<img src="cmd.jpg">
+					</section>
+					<section>
+						<h3>Voice Activated</h3>
+						<img src="siri.jpg"><br><small>http://goo.gl/4vFql</small>
+					</section>
+					<section>
+						<h3>Gesture Based</h3>
+						<img src="kinect.jpg">
+						<br><small>http://gamerant.com/microsoft-kinect-reviews-guide-benk-51320/</small>
+					</section>
+					<section>
+						<h3>Dream worthy Interfaces</h3>
+						<img src="avengers.png">
+						<br><small>Avengers, 2012 - Warner Bros</small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Good Interfaces</h2>
+						<p>What do they all have in common?</p>
+					</section>
+					<section>
+						<h2>User-centered</h2>
+						<img src="google.jpg">
+					</section>
+					<section>
+						<h2>Easily Learnable</h2>
+						<img src="paint.jpg">
+						<img src="fb.jpg">
+						<img src="yt.jpg">
+					</section>
+					<section>
+						<h2>Fits in the environment</h2>
+						<ul>
+							<li>Angry Birds in <b>Windows</b></li>
+							<li>Dreamweaver in <b>iPhones</b></li>
+							<li>Windows on a <b>DJ Set</b></li>
+							<li>Temple Run using your <b>Mouse</b></li>
+							<li>Using Mouse to control a robot</li>
+						</ul>
+					</section>
+					<section>
+						<h2>And the gist is...</h2>
+					</section>
+					<section>
+						<h2 style="font-size:269px">DON'T MAKE ME THINK</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Design Paradigms</h2>
+						<h4>Don't make me learn</h4>
+						<ul>
+							<li>Use existing design ideas</li>
+							<li>Don't re-invent the wheel</li>
+							<li>Design to learn quickly</li>
+							<li>Minimum Effort</li>
+							<li>Users are Lazy</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tabs</h2>
+						<img src="tabs.jpg">
+					</section>
+					<section>
+						<h2>Sensible Defaults</h2>
+						<p>Examples: </p>
+						<ul>
+							<li>Choose default country</li>
+							<li>Choose most-used price range</li>
+							<li>Show popular content</li>
+							<li>Reduce Design induced Frustration</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Navigation Heirarchy</h2>
+						<img src="menus.png">
+						<p>Give your users an idea of what is important</p>
+					</section>
+					<section>
+						<h2>Eye Tracking</h2>
+						<img src="eye.jpg">
+					</section>
+					<section>
+						<h2>Using Icons</h2>
+						<ul>
+							<li>Bad Icons: <br><img src="gmail.jpg"></li>
+							<li>Fine Icons/Buttons: <br><img src="gmail-2.jpg"></li>
+							<li>More Bad Icons: <br><img src="idm.jpg"></li>
+							<li>Good: <br><img src="wmp.jpg"></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Call To Action</h2>
+						<img src="gmail-field.jpg">
+					</section>
+					<section>
+						<h2>More CTA</h2>
+						<img src="gs.png">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Design Workflows</h2>
+						<blockquote>Produce at least 3 alternatives for every design decision - <a href="https://news.ycombinator.com/item?id=4312953">msuther</a></blockquote>
+					</section>
+					<section>
+						<h2>SketchFlow</h2>
+						<img src="sketch.jpg">
+						<p>Go through every screen &amp; its relation with other screens</p>
+					</section>
+					<section>
+						<h2>Mockups</h2>
+						<img src="mockup.jpg">
+						<p>Sketches, Wireframes, Mockups, Pixels, Shots</p>
+					</section>
+					<section>
+						<h2>Think Over every interaction</h2>
+						<p>Is this the easiest, most obvious interaction that the user would choose?</p>
+						<p>Can I offer an alternative to this interaction?</p>
+						<p>Don't miss out the power users</p>
+						<p>Don't try to do everything, do ONE THING WELL </p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>References</h2>
+						<p>This is just a small sample of what is out there in the web</p>
+						<h1>Doing><br>Learning><br>Reading</h1>
+					</section>
+					<section>
+						<h2>Don't Make Me Think - Steve Krug</h2>
+						<img src="dmmt.jpg">
+					</section>
+					<section>
+						<h2>GUI Bloopers</h2>
+						<img src="blooper-1.jpg">
+						<img src="blooper.jpg">
+						<img src="blooper-2.jpg">
+					</section>
+					<section>
+						<h2><a href="http://littlebigdetails.com">  Little Big Details  </a></h2>
+						<img src="lbd.jpg">
+						<img src="lbd2.png">
+						<img src="lbd3.png">
+					</section>
+					<section>
+						<h2><a href="http://usabilityhell.com/">Usability Hell</a></h2>
+						<img src="london.png">
+					</section>
+					<section>
+						<h2><a href="http://ux.stackexchange.com"></a>ux.stackexchange</h2>
+						<img src="ux.jpg">
+					</section>
+				</section>
+				<section>
+					<section><h2>Questions?</h2></section>
+					<section>
+						<h1>Think</h1>
+						<h3>about how would you improve</h3>
+						<ul>
+							<li>A coffee machine</li>
+							<li>A power socket</li>
+							<li>google.com</li>
+							<li>muzi</li>
+							<li>anything really...</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Thanks</h2>
+					</section>
+				</section>
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+
+		<script>
+			// Load reveal.js as well as a classList polyfill if needed
+			head.js( !document.body.classList ? 'lib/js/classList.js' : null )
+				.js( 'js/reveal.js', function() {
+
+				// Parse the query string into a key/value object
+				var query = {};
+				location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+					query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+				} );
+
+				// Fires when a slide with data-state=customevent is activated
+				Reveal.addEventListener( 'customevent', function() {
+					console.log( '"customevent" has fired' );
+				} );
+
+				// Fires each time a new slide is activated
+				Reveal.addEventListener( 'slidechanged', function( event ) {
+					// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+				} );
+
+				// Full list of configuration options available here:
+				// https://github.com/hakimel/reveal.js#configuration
+				Reveal.initialize({
+					controls: true,
+					progress: true,
+					history: true,
+					
+					theme: query.theme || 'default', // default/neon/beige
+					transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+				});
+
+			} );
+
+			// If we're runnning the notes server we need to include some additional JS
+			// TODO Is there a better way to determine if we're running the notes server?
+			if( window.location.host === 'localhost:1947' ) {
+				head.js( 'socket.io/socket.io.js', 'plugin/speakernotes/client.js' );
+			}
+			
+		</script>
+		
+	</body>
+</html>
