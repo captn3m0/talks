@@ -10,6 +10,6 @@ Various talks & Lectures that I have given
 6. [Security Horror Stories in Payments](https://speakerdeck.com/captn3m0/security-horror-stories-in-payments) - Talk at the 50p Conference (2017) [[Video]](https://www.youtube.com/watch?v=_M-cftlhYKI) Talk about several security gotchas I've witnessed working in payments. Given at 50p, a HasGeek conference on Digital Payments in India.
 7. [Billion Dollar Hacking](https://speakerdeck.com/captn3m0/billion-dollar-hacking) - A short talk at a Dev/Hacker meetup about the recent SWIFT bank hacks. I repeated this talk at hillhacks 2016.
 8. [Indian Financial Systems Code](http://slides.com/captn3m0/indian-financial-systems-code#/) - A short talk on IFSC Codes and how they work in India.
-9. [Terraforming Tatooine](https://www.beautiful.ai/-L4w5j_sJ9XkKnzf1OXt/1) - A short talk at [Barcamp Bangalore Spring 2018](https://barcampbangalore.com/bcb/bcb-spring-2018/terraform-docker-nemo) on how I manage my home server using Terraform and Docker. PDF version is available at [speakerdeck](https://speakerdeck.com/captn3m0/terraforming-tatooine)
+9. [Terraforming Tatooine](https://www.beautiful.ai/deck/-L4w5j_sJ9XkKnzf1OXt) - A short talk at [Barcamp Bangalore Spring 2018](https://barcampbangalore.com/bcb/bcb-spring-2018/terraform-docker-nemo) on how I manage my home server using Terraform and Docker. PDF version is available at [speakerdeck](https://speakerdeck.com/captn3m0/terraforming-tatooine)
 
 A few more talks that I've done are on my [SpeakerDeck account](https://speakerdeck.com/captn3m0)
