@@ -8,7 +8,7 @@ inlineSVG: true
 
 ---
 
-# about me
+# `whoami`
 
 - Nemo
 - [@captn3m0](https://twitter.com/captn3m0)
@@ -18,10 +18,51 @@ inlineSVG: true
 
 # agenda
 
-1.  the hardware
-2.  the software
-3.  the alternatives
-4.  the CTA
+0.  what counts as a homeserver?
+1.  Why you should run one?
+1.  How do you get started?
+1.  All the gotchas!
+1.  CTA
+
+---
+
+# homeserver
+
+A _computer_ which runs service(s) for personal use.
+
+---
+
+![bg](https://fakeimg.pl/1920x800/C4E538/fff/?text=why?)
+
+---
+
+# motivation?
+
+1.  owning your data
+
+---
+
+# motivation?
+
+1.  owning your data
+2.  de-googling
+
+---
+
+# motivation?
+
+1.  owning your data
+2.  de-googling
+3.  backing up your data locally
+
+---
+
+# motivation?
+
+1.  owning your data
+2.  de-googling
+3.  backing up your data locally
+4.  learning/experimenting with tech
 
 ---
 
@@ -35,19 +76,113 @@ inlineSVG: true
 
 ---
 
+# <!-- _class: lead --> ![drop-shadow](./images/sideproject.jpg)
+
+---
+
 # time?
 
 _<5 hr a month_
 
 ---
 
-# <!-- _class: lead --> ![drop-shadow](./images/sideproject.jpg)
+![bg](https://fakeimg.pl/1920x800/C4E538/fff/?text=software)
+![bg vertical](https://fakeimg.pl/1920x800/A3CB38/fff/?text=hardware)
+![bg](https://fakeimg.pl/1920x800/009432/fff/?text=glue)
 
 ---
 
-![bg vertical](https://fakeimg.pl/1920x800/C4E538/fff/?text=hardware)
-![bg](https://fakeimg.pl/1920x800/A3CB38/fff/?text=software)
-![bg](https://fakeimg.pl/1920x800/009432/fff/?text=glue)
+![bg](images/elite130.jpg)
+
+---
+
+![bg](images/htpc.jpg)
+
+---
+
+# what I run
+
+## Monitoring
+
+- Prometheus
+- Grafana
+- speedtest-exporter
+- ACT Exporter
+- CAdvisor
+
+---
+
+![bg fit](images/act2.jpg)
+
+---
+
+## Media
+
+- Airsonic (:musical_note:) (Google Play)
+- Jellyfin (:movie_camera:) (Netflix)
+- Kodi (:tv:) (Home Theater)
+- Audioserve (:studio_microphone: :book:) (Audible)
+
+---
+
+## Content
+
+- NextCloud :cloud: :white_check_mark: (Google Drive/iCloud)
+- Miniflux (:newspaper_roll: `RSS`) (Google Reader)
+- Timemachine (💻 ⏮)
+- wiki.js
+- Radicale :date: :card_index_dividers: (Google Contacts/Google Calendar)
+- RSS Bridge
+- Resilio :arrows_counterclockwise: (Dropbox)
+- Gitea (GitHub)
+
+---
+
+![bg](https://fakeimg.pl/1920x800/C4E538/fff/?text=hardware)
+
+---
+
+## [Specs](https://in.pcpartpicker.com/list/fZfp6s)
+
+- Intel i5-7600 3.5GHz
+- Nvidia 1050 Ti 4GB
+- 2x8GB DDR4 RAM
+- 3x3TB Internal HDD
+- MSI B250I Motherboard
+
+## :cloud:
+
+- DO 1vCPU / 2GB RAM / 30GB SSD ($10/mo) (BLR1 region)
+- \+ 100GB disk
+
+---
+
+# A VM on the :cloud:
+
+- Scaleway: 4ARMv8/2GB/50GB - 300 INR
+- AWS Lightsail: 1vCPU/512MB/20GB - 250 INR
+- Digital Ocean: 1vCPU/1GB/25GB - 350 INR
+
+_Beware of Persistent Storage cost_
+
+---
+
+# :cloud:
+
+- Security: Footgun
+- Batteries included
+- OpEx
+
+---
+
+# cloud storage
+
+| Storage | Cost/month | Retail |
+| :------ | ---------- | ------ |
+| 1TB-SSD | $100       | $99    |
+| 3TB-SSD | $300       | $224   |
+| 1TB     | $25        | $45    |
+| 3TB     | $75        | $84    |
 
 ---
 
@@ -65,13 +200,11 @@ _<5 hr a month_
 
 ---
 
-# A VM on the :cloud:
+# system76 Meerkat
 
-- Scaleway: 4ARMv8/2GB/50GB - 300 INR
-- AWS Lightsail: 1vCPU/512MB/20GB - 250 INR
-- Digital Ocean: 1vCPU/1GB/25GB - 350 INR
+![bg](https://d1vhcvzji58n1j.cloudfront.net/assets/products/meer4/hero_wide-7cf0ee6536_2560.jpg)
 
-_Beware of Persistent Storage cost_
+<!-- TODO: Fix header -->
 
 ---
 
@@ -88,17 +221,54 @@ _Beware of Persistent Storage cost_
 
 ---
 
-# system76 Meerak
+# have some old laptops?
 
-![bg](https://d1vhcvzji58n1j.cloudfront.net/assets/products/meer4/hero_wide-7cf0ee6536_2560.jpg)
+<!-- https://preview.redd.it/b9fvg5yo5dl21.jpg?width=1024&auto=webp&s=9a5a4d9fdd4e486a23c159f4e4e27e88942018f5 -->
 
-<!-- TODO: Fix header -->
+![bg cover](images/homelab1.jpg)
 
 ---
 
-# my build
+# really into networking?
 
-- TODO
+<!-- https://preview.redd.it/8682wq9m8kn21.jpg?width=576&auto=webp&s=41e7ab264fcbb054209981126259b9b44b9d1d70 -->
+
+![bg cover](images/homelab2.jpg)
+
+---
+
+# really want a cluster?
+
+<!-- http://raspberrywebserver.com/raspberrypicluster/raspberry-pi-cluster.html -->
+
+![bg cover](images/cluster.jpg)
+
+---
+
+# Hybrid
+
+- Local Disk, Cloud Compute
+
+![](images/hybrid.jpg)
+
+---
+
+|                     | Cloud              | Pi  | PC\*     | Hybrid | NAS |
+| :------------------ | ------------------ | --- | -------- | ------ | --- |
+| **Security** :lock: | +                  | ++  | ++       | +      | ++  |
+| **Utility**         | +++                | -   | :dollar: | ++     | -   |
+| **Cost**            | :money_with_wings: | +++ | ++       | +      | ++  |
+| **Setup-Ease**      | +                  | +   | -        | --     | ++  |
+| **Ops-Ease**        | ++                 | -   | +        | -      | ++  |
+| **Storage**         | --                 | -   | +        | ++     | ++  |
+| **Gaming**          | --                 | -   | ++       | ++     | --  |
+| **HTPC**            | :dollar:           | +   | ++       | ++     | +   |
+
+- \*Includes DIY/PC/Alienware/Old Laptops/Gaming PC
+
+---
+
+![bg](https://fakeimg.pl/1920x800/C4E538/fff/?text=glue)
 
 ---
 
@@ -128,40 +298,6 @@ _Beware of Persistent Storage cost_
 
 ---
 
-# what I run
-
-## Monitoring
-
-- Prometheus
-- Grafana
-- speedtest-exporter
-- ACT Exporter
-- CAdvisor
-
----
-
-## Media
-
-- Airsonic (:musical_note:)
-- Jellyfin (:movie_camera:)
-- Kodi (:tv:)
-- Audioserve (:studio_microphone: :book:)
-
----
-
-## Content
-
-- NextCloud :cloud: :white_check_mark:
-- Miniflux (:newspaper_roll: `RSS`)
-- Timemachine (💻 ⏮)
-- wiki.js
-- Radicale :date: :card_index_dividers:
-- RSS Bridge
-- Resilio :arrows_counterclockwise:
-- Gitea
-
----
-
 # networking
 
 - Public+Static IP Address
@@ -170,30 +306,6 @@ _Beware of Persistent Storage cost_
 ---
 
 ![bg cover](images/networking.jpg)
-
----
-
-# really into networking?
-
-<!-- https://preview.redd.it/b9fvg5yo5dl21.jpg?width=1024&auto=webp&s=9a5a4d9fdd4e486a23c159f4e4e27e88942018f5 -->
-
-![bg cover](images/homelab1.jpg)
-
----
-
-# really into networking?
-
-<!-- https://preview.redd.it/8682wq9m8kn21.jpg?width=576&auto=webp&s=41e7ab264fcbb054209981126259b9b44b9d1d70 -->
-
-![bg cover](images/homelab2.jpg)
-
----
-
-# really want a cluster?
-
-<!-- http://raspberrywebserver.com/raspberrypicluster/raspberry-pi-cluster.html -->
-
-![bg cover](images/cluster.jpg)
 
 ---
 
@@ -222,35 +334,8 @@ module "requestbin" {
 }
 ```
 
----
-
-# docker
-
-```json
-"Labels": {
-    "traefik.docker.network": "traefik",
-    "traefik.enable": "true",
-    "traefik.frontend.headers.STSSeconds": "2592000",
-    "traefik.frontend.headers.browserXSSFilter": "true",
-    "traefik.frontend.rule": "Host:requestbin.bb8.fun",
-    "traefik.port": "8000",
-    "traefik.protocol": "http"
-}
-```
-
-`docker run --tags ... --network traefik jankysolutions/requestbin:latest`
-
----
-
-### OTA Updates
-
-```json
-provider "docker" {
-  host      = "tcp://docker.vpn.bb8.fun:2376"
-  cert_path = "./secrets/tatooine"
-  version   = "~> 2.0.0"
-}
-```
+- source: <https://git.captnemo.in/nemo/nebula>
+- [terraform.io/docker](https://www.terraform.io/docs/providers/docker/)
 
 ---
 
@@ -262,7 +347,17 @@ provider "docker" {
 
 All over a API, but only for one host.
 
-docker swarm, but
+docker swarm, but single host
+
+---
+
+# security
+
+1.  Don't expose services
+2.  Expose services without auth over VPN only
+3.  Don't expose management services over Internet
+4.  Keep services behind Auth (even Basic Auth works)
+5.  Go Hybrid
 
 ---
 
@@ -279,3 +374,10 @@ section.lead h1 {
   text-align: center;
 }
 </style>
+
+---
+
+# questions?
+
+- [me@captnemo.in](mailto:me@captnemo.in)
+- [@captn3m0](https://twitter.com/captn3m0)
