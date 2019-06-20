@@ -1,10 +1,11 @@
 ---
 inlineSVG: true
+paginate: true
 ---
 
-# <!--fit--><!-- _class: lead -->The homeserver talk
+# <!--fit--><!-- _class: lead white -->the homeserver talk
 
-\- _nemo_
+![bg](https://fakeimg.pl/1920x800/8e44ad/fff/?text=+&npsp;)
 
 ---
 
@@ -13,6 +14,7 @@ inlineSVG: true
 - Nemo
 - [@captn3m0](https://twitter.com/captn3m0)
 - [@razorpay](https://razorpay.com) (:money_with_wings: :credit_card:)
+- me@captnemo.in
 
 ---
 
@@ -32,7 +34,7 @@ A _computer_ which runs service(s) for personal use.
 
 ---
 
-![bg](https://fakeimg.pl/1920x800/C4E538/fff/?text=why?)
+![bg](https://fakeimg.pl/1920x800/8e44ad/fff/?text=why?)
 
 ---
 
@@ -86,12 +88,6 @@ _<5 hr a month_
 
 ---
 
-![bg](https://fakeimg.pl/1920x800/C4E538/fff/?text=software)
-![bg vertical](https://fakeimg.pl/1920x800/A3CB38/fff/?text=hardware)
-![bg](https://fakeimg.pl/1920x800/009432/fff/?text=glue)
-
----
-
 ![bg](images/elite130.jpg)
 
 ---
@@ -100,19 +96,31 @@ _<5 hr a month_
 
 ---
 
-# what I run
+![bg](https://fakeimg.pl/1920x800/8e44ad/fff/?text=software)
+![bg vertical](https://fakeimg.pl/1920x800/AE53D4/fff/?text=hardware)
+![bg](https://fakeimg.pl/1920x800/B858E0/fff/?text=glue)
+
+---
+
+# what I run?
 
 ## Monitoring
 
 - Prometheus
 - Grafana
 - speedtest-exporter
-- ACT Exporter
+- [ACT Exporter](https://git.captnemo.in/nemo/prometheus-act-exporter)
 - CAdvisor
 
 ---
 
 ![bg fit](images/act2.jpg)
+
+---
+
+![bg fit](images/act-graph.png)
+
+<!-- _class: bottom --> [#](https://grafana.bb8.fun/d/_u2-GHSik/main-dashboard?orgId=1&fullscreen&panelId=3&from=now%2Fw&to=now)
 
 ---
 
@@ -127,18 +135,18 @@ _<5 hr a month_
 
 ## Content
 
-- Nextcloud :cloud: :white_check_mark: (Google Drive/iCloud)
-- Miniflux (:newspaper_roll: `RSS`) (Google Reader)
-- Timemachine (💻 ⏮)
-- wiki.js
-- Radicale :date: :card_index_dividers: (Google Contacts/Google Calendar)
-- RSS Bridge
-- Resilio :arrows_counterclockwise: (Dropbox)
-- Gitea (GitHub)
+- [Nextcloud][nc] :cloud: :white_check_mark: (Drive/Calendar/Contacts/Documents)
+- [Miniflux][miniflux] (:newspaper_roll: `RSS`) (Feeds)
+- [Timemachine][timemachine] (💻 ⏮)
+- [wiki.js][wiki]
+- [Radicale][radicale] :date: :card_index_dividers: (Contacts/Calendar)
+- [RSS Bridge][rssb]
+- [Gitea][gitea] (GitHub)
+- [ZNC](https://wiki.znc.in/ZNC) (IRC)
 
 ---
 
-![bg](https://fakeimg.pl/1920x800/C4E538/fff/?text=hardware)
+![bg](https://fakeimg.pl/1920x800/AE53D4/fff/?text=hardware)
 
 ---
 
@@ -184,6 +192,8 @@ _Beware of Persistent Storage cost_
 | 1TB     | $25        | $45    |
 | 3TB     | $75        | $84    |
 
+_Indicative AWS:EBS Prices_
+
 ---
 
 # Raspberry Pi 3
@@ -221,7 +231,7 @@ _Beware of Persistent Storage cost_
 
 ---
 
-# <!-- _class: white -->have some old laptops?
+# <!-- _class: white  bottom-->have some old laptops?
 
 <!-- https://preview.redd.it/b9fvg5yo5dl21.jpg?width=1024&auto=webp&s=9a5a4d9fdd4e486a23c159f4e4e27e88942018f5 -->
 
@@ -229,7 +239,7 @@ _Beware of Persistent Storage cost_
 
 ---
 
-# <!-- _class: white -->really into networking?
+# <!-- _class: white  bottom-->really into networking?
 
 <!-- https://preview.redd.it/8682wq9m8kn21.jpg?width=576&auto=webp&s=41e7ab264fcbb054209981126259b9b44b9d1d70 -->
 
@@ -237,7 +247,7 @@ _Beware of Persistent Storage cost_
 
 ---
 
-# <!-- _class: white -->really want a cluster?
+# <!-- _class: white bottom -->really want a cluster?
 
 <!-- http://raspberrywebserver.com/raspberrypicluster/raspberry-pi-cluster.html -->
 
@@ -268,16 +278,7 @@ _Beware of Persistent Storage cost_
 
 ---
 
-![bg](https://fakeimg.pl/1920x800/C4E538/fff/?text=glue)
-
----
-
-# software
-
-1.  docker
-2.  kubernetes
-3.  ansible/puppet/chef
-4.  [tool-of-your-choice](https://docs.google.com/spreadsheets/d/1FCgqz1Ci7_VCz_wdh8vBitZ3giBtac_H8SBw4uxnrsE/edit#gid=0)
+![bg](https://fakeimg.pl/1920x800/B858E0/fff/?text=glue)
 
 ---
 
@@ -287,6 +288,9 @@ _Beware of Persistent Storage cost_
 2.  kubernetes
 3.  ansible/puppet/chef
 4.  helm?
+5.  [tool-of-your-choice](https://docs.google.com/spreadsheets/d/1FCgqz1Ci7_VCz_wdh8vBitZ3giBtac_H8SBw4uxnrsE/edit#gid=0)
+6.  [Unraid](https://www.unraid.net/)
+7.  [HomelabOS](https://gitlab.com/NickBusey/HomelabOS)
 
 ---
 
@@ -300,8 +304,10 @@ _Beware of Persistent Storage cost_
 
 # networking
 
-- Public+Static IP Address
+- Public + Static IP Address
 - Floating/Elastic IP
+- VPN
+- Wildcard DNS/TLS
 
 ---
 
@@ -309,7 +315,7 @@ _Beware of Persistent Storage cost_
 
 ---
 
-# configuration
+<!-- # configuration
 
 - terraform + docker
 - kubernetes + helm
@@ -349,7 +355,7 @@ All over a API, but only for one host.
 
 docker swarm, but single host
 
----
+--- -->
 
 # security
 
@@ -358,6 +364,10 @@ docker swarm, but single host
 3.  Don't expose management services over Internet
 4.  Keep services behind Auth (even Basic Auth works)
 5.  Go Hybrid
+
+---
+
+![bg](https://fakeimg.pl/1920x800/27ae60/fff/?text=buy+a+raspberry+pi+today)
 
 ---
 
@@ -376,6 +386,27 @@ section.lead h1 {
 section.white h1 {
   color: white !important;
 }
+
+h1,h2,h3,h4,h5 {
+  font-weight: bold;
+  font-family: 'Yanone Kaffeesatz', sans-serif !important;
+  color: #2c3e50;
+}
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}h3 {
+  font-size: 1.3em;
+}
+
+section.bottom>*, section.bottom {
+  text-align: center;
+  padding-top: 300px;
+  text-shadow: -1px -1px 0 #34495e, 1px -1px 0 #34495e, -1px 1px 0 #34495e, 1px 1px 0 #34495e;
+}
 </style>
 
 ---
@@ -385,15 +416,6 @@ section.white h1 {
 - [me@captnemo.in](mailto:me@captnemo.in)
 - [@captn3m0](https://twitter.com/captn3m0)
 
----
-
-# questions?
-
-- [me@captnemo.in](mailto:me@captnemo.in)
-- [@captn3m0](https://twitter.com/captn3m0)
-
-# Buy A Raspberry Pi Today!
-
 <!---
 0. SPEAK SLOWLY
 1. check colors and fix colors.
@@ -402,3 +424,11 @@ section.white h1 {
 4. Cloud Icon Fix
 5. Software section mention backups again
 -->
+
+[nc]: https://nextcloud.com/
+[miniflux]: https://github.com/miniflux/miniflux/
+[timemachine]: https://github.com/odarriba/docker-timemachine/
+[wiki]: https://docs.requarks.io/wiki/install/docker
+[radicale]: https://radicale.org/
+[rssb]: https://github.com/RSS-Bridge/rss-bridge
+[gitea]: https://gitea.io/
