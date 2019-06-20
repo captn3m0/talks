@@ -2,7 +2,7 @@
 inlineSVG: true
 ---
 
-# <!--fit--><!-- _class: lead -->The Home Server Talk
+# <!--fit--><!-- _class: lead -->The homeserver talk
 
 \- _nemo_
 
@@ -127,7 +127,7 @@ _<5 hr a month_
 
 ## Content
 
-- NextCloud :cloud: :white_check_mark: (Google Drive/iCloud)
+- Nextcloud :cloud: :white_check_mark: (Google Drive/iCloud)
 - Miniflux (:newspaper_roll: `RSS`) (Google Reader)
 - Timemachine (💻 ⏮)
 - wiki.js
@@ -159,9 +159,9 @@ _<5 hr a month_
 
 # A VM on the :cloud:
 
-- Scaleway: 4ARMv8/2GB/50GB - 300 INR
-- AWS Lightsail: 1vCPU/512MB/20GB - 250 INR
-- Digital Ocean: 1vCPU/1GB/25GB - 350 INR
+- Scaleway: 4ARMv8/2GB/50GB - **300 INR**
+- AWS Lightsail: 1vCPU/512MB/20GB - **250 INR**
+- Digital Ocean: 1vCPU/1GB/25GB - **350 INR**
 
 _Beware of Persistent Storage cost_
 
@@ -193,14 +193,14 @@ _Beware of Persistent Storage cost_
 - :chains: 4 USB ports
 - :musical_note: Audio/HDMI/Composite VGA
 - :zap: 2.5A
-- :money_with_wings: ~3k INR
+- :money_with_wings: **~3k INR**
 - :camera:, GPIO
 
 ![bg right](https://cdn.shopify.com/s/files/1/0176/3274/products/Kit-game_1024x1024.jpg)
 
 ---
 
-# system76 Meerkat
+# <!-- _class: white -->system76 Meerkat
 
 ![bg](https://d1vhcvzji58n1j.cloudfront.net/assets/products/meer4/hero_wide-7cf0ee6536_2560.jpg)
 
@@ -210,7 +210,7 @@ _Beware of Persistent Storage cost_
 
 # Other Alternatives
 
-![bg right](http://www.thebookpc.com/v/vspfiles/photos/RV-NUC-I3-LINUX-2.jpg)
+![bg right](images/nuc.jpg)
 
 1.  Intel NUCs
 2.  [Hetzner Server Auctions](https://www.hetzner.com/sb) (20-50USD/mo).
@@ -221,7 +221,7 @@ _Beware of Persistent Storage cost_
 
 ---
 
-# have some old laptops?
+# <!-- _class: white -->have some old laptops?
 
 <!-- https://preview.redd.it/b9fvg5yo5dl21.jpg?width=1024&auto=webp&s=9a5a4d9fdd4e486a23c159f4e4e27e88942018f5 -->
 
@@ -229,7 +229,7 @@ _Beware of Persistent Storage cost_
 
 ---
 
-# really into networking?
+# <!-- _class: white -->really into networking?
 
 <!-- https://preview.redd.it/8682wq9m8kn21.jpg?width=576&auto=webp&s=41e7ab264fcbb054209981126259b9b44b9d1d70 -->
 
@@ -237,7 +237,7 @@ _Beware of Persistent Storage cost_
 
 ---
 
-# really want a cluster?
+# <!-- _class: white -->really want a cluster?
 
 <!-- http://raspberrywebserver.com/raspberrypicluster/raspberry-pi-cluster.html -->
 
@@ -264,7 +264,7 @@ _Beware of Persistent Storage cost_
 | **Gaming**          | --                 | -   | ++       | ++     | --  |
 | **HTPC**            | :dollar:           | +   | ++       | ++     | +   |
 
-- \*Includes DIY/PC/Alienware/Old Laptops/Gaming PC
+<!-- - \*Includes DIY/PC/Alienware/Old Laptops/Gaming PC -->
 
 ---
 
@@ -373,6 +373,9 @@ docker swarm, but single host
 section.lead h1 {
   text-align: center;
 }
+section.white h1 {
+  color: white !important;
+}
 </style>
 
 ---
@@ -381,3 +384,21 @@ section.lead h1 {
 
 - [me@captnemo.in](mailto:me@captnemo.in)
 - [@captn3m0](https://twitter.com/captn3m0)
+
+---
+
+# questions?
+
+- [me@captnemo.in](mailto:me@captnemo.in)
+- [@captn3m0](https://twitter.com/captn3m0)
+
+# Buy A Raspberry Pi Today!
+
+<!---
+0. SPEAK SLOWLY
+1. check colors and fix colors.
+2. skip clustering
+3. Fix colors
+4. Cloud Icon Fix
+5. Software section mention backups again
+-->
