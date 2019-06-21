@@ -321,6 +321,10 @@ _Indicative AWS:EBS Prices_
 
 ---
 
+![bg cover](images/network-mini.jpg)
+
+---
+
 ![bg cover](images/networking.jpg)
 
 ---
@@ -382,11 +386,12 @@ docker swarm, but single host
 
 # security
 
+0.  Run everything in isolation
 1.  Don't expose services
-2.  Expose services without auth over VPN only
-3.  Don't expose management services over Internet
-4.  Keep services behind Auth (even Basic Auth works)
-5.  Go Hybrid
+1.  Expose services without auth over VPN only
+1.  Don't expose management services over Internet
+1.  Keep services behind Auth (even Basic Auth works)
+1.  Go Hybrid
 
 ---
 
@@ -441,6 +446,7 @@ section.bottom>*, section.bottom {
 - [me@captnemo.in](mailto:me@captnemo.in)
 - [@captn3m0](https://twitter.com/captn3m0)
 - [captnemo.in/archive.html](https://captnemo.in/archive.html)
+- [captnemo.in/talks/](https://captnemo.in/talks/hs/)
 
 <!---
 0. SPEAK SLOWLY
