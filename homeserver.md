@@ -20,7 +20,7 @@ paginate: true
 
 # agenda
 
-0.  what counts as a homeserver?
+0.  What counts as a homeserver?
 1.  Why you should run one?
 1.  How do you get started?
 1.  All the gotchas!
@@ -146,7 +146,9 @@ _<5 hr a month_
 
 ---
 
-![bg](https://fakeimg.pl/1920x800/AE53D4/fff/?text=hardware)
+# <!--fit--><!-- _class: lead white -->hardware
+
+![bg](https://fakeimg.pl/1920x800/AE53D4/fff/?text=+&npsp;)
 
 ---
 
@@ -278,7 +280,9 @@ _Indicative AWS:EBS Prices_
 
 ---
 
-![bg](https://fakeimg.pl/1920x800/B858E0/fff/?text=glue)
+# <!--fit--><!-- _class: lead white -->glue
+
+![bg](https://fakeimg.pl/1920x800/B858E0/fff/?text=+&npsp;)
 
 ---
 
@@ -291,6 +295,12 @@ _Indicative AWS:EBS Prices_
 5.  [tool-of-your-choice](https://docs.google.com/spreadsheets/d/1FCgqz1Ci7_VCz_wdh8vBitZ3giBtac_H8SBw4uxnrsE/edit#gid=0)
 6.  [Unraid](https://www.unraid.net/)
 7.  [HomelabOS](https://gitlab.com/NickBusey/HomelabOS)
+
+---
+
+# <!--fit--><!-- _class: lead white -->pick something dumb
+
+![bg](https://fakeimg.pl/1920x800/9b59b6/fff/?text=+&npsp;)
 
 ---
 
@@ -315,7 +325,14 @@ _Indicative AWS:EBS Prices_
 
 ---
 
-<!-- # configuration
+<!--
+
+REM What follows are some slides on
+REM on how I configure my network and infrastructure
+REM with docker/terraform, but they aren't
+REM useful for the audience, so skipped
+
+# configuration
 
 - terraform + docker
 - kubernetes + helm
@@ -357,6 +374,12 @@ docker swarm, but single host
 
 --- -->
 
+# <!--fit--><!-- _class: lead white -->security
+
+![bg](https://fakeimg.pl/1920x800/27ae60/fff/?text=+&npsp;)
+
+---
+
 # security
 
 1.  Don't expose services
@@ -367,7 +390,9 @@ docker swarm, but single host
 
 ---
 
-![bg](https://fakeimg.pl/1920x800/27ae60/fff/?text=buy+a+raspberry+pi+today)
+# <!--fit--><!-- _class: lead white -->buy a raspberry pi today
+
+![bg](https://fakeimg.pl/1920x800/27ae60/fff/?text=+&npsp;)
 
 ---
 
@@ -415,6 +440,7 @@ section.bottom>*, section.bottom {
 
 - [me@captnemo.in](mailto:me@captnemo.in)
 - [@captn3m0](https://twitter.com/captn3m0)
+- [captnemo.in/archive.html](https://captnemo.in/archive.html)
 
 <!---
 0. SPEAK SLOWLY

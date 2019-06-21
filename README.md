@@ -12,5 +12,6 @@ Various talks & Lectures that I have given
 10. [Indian Financial Systems Code](http://slides.com/captn3m0/indian-financial-systems-code#/) - A short talk on IFSC Codes and how they work in India.
 11. [Terraforming Tatooine](https://www.beautiful.ai/deck/-L4w5j_sJ9XkKnzf1OXt) - A short talk at [Barcamp Bangalore Spring 2018](https://barcampbangalore.com/bcb/bcb-spring-2018/terraform-docker-nemo) on how I manage my home server using Terraform and Docker. PDF version is available at [speakerdeck](https://speakerdeck.com/captn3m0/terraforming-tatooine)
 12. [crypto.koans](/talks/crypto.koans/) - Koans to help you learn openssl/PKI.
+13. [HomeServer Talk](/talks/hs/) - A talk on running my own homeserver. Presented at [RootConf '19](https://rootconf.in)
 
 A few more talks that I've done are on my [SpeakerDeck account](https://speakerdeck.com/captn3m0)
