@@ -709,3 +709,7 @@ let file = fs
 3. Uses Ruby/Sinatra/Redis for serving requests
 
 ---
+
+## [captnemo.in/talks/ifsc/](https://captnemo.in/talks/ifsc/)
+
+Source: https://github.com/captn3m0/talks/tree/gh-pages/ifsc
