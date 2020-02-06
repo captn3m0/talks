@@ -1,6 +1,11 @@
-# Things nobody ever tells you about IFSC
+---
+paginate: true
+inlineSVG: true
+---
 
-\- nemo
+# things nobody ever tells you about IFSC
+
+\-nemo
 
 ---
 
@@ -8,7 +13,7 @@
 
 ---
 
-# WRONG!
+# ![bg](https://fakeimg.pl/1920x800/ff4d4d/fff/?text=wrong)
 
 ---
 
@@ -59,7 +64,7 @@ SUM:                            47            536            192           7613
 
 ---
 
-![bg 100%](google-image-search.png)
+![bg 100%](google-image-search.jpg)
 
 ---
 
@@ -102,7 +107,9 @@ NPCI publishes a few lists:
 
 ---
 
-# what's the data?
+![bg](https://fakeimg.pl/1920x800/c56cf0/fff/?text=what's+the+data)
+
+---
 
 ## `banks.json`
 
@@ -315,3 +322,390 @@ Razorpay::IFSC::Bank.get_details Razorpay::IFSC::Bank::PUNB
 # Growth Chart
 
 ![](chart.png)
+
+---
+
+![bg](https://fakeimg.pl/1920x800/c56cf0/fff/?text=planned+learnings)
+
+---
+
+# planned learnings
+
+- polyglot-single-repo-packages
+- open-data-superfast-public-APIs
+- scapegoat-application for random tests
+
+---
+
+```
+src/banknames.json
+src/ruby
+src/banks.json
+src/patches
+src/custom-sublets.json
+src/elixir
+src/node
+src/IFSC.json
+src/sublet.json
+src/php
+```
+
+---
+
+![bg](https://fakeimg.pl/1920x800/c56cf0/fff/?text=unplanned+learnings)
+
+---
+
+# 1. There are too many banks in India
+
+- `banknames.json` holds 1400+ named banks
+- Adding sublets, it adds up to atleast 2500+
+- Not all banks are recognized by RBI (with a 4 letter code)
+
+---
+
+# 2. There are 11 kinds of banks in India:
+
+- DCCB (District Co-operative Central Bank)
+- Foreign Bank
+- LAB (Local Area Bank)
+- O-UCB (Urban Co-operative Bank)
+- PB (Payment Bank)
+- Private (Private Sector Banks)
+- PSB (Public Sector Bank)
+- RRB (Regional Rural Bank)
+- S-UCB (?? Urban Co-operative Banks)
+- SCB (State Co-operative Bank)
+- SFB (Small Finance Bank)
+
+---
+
+# 3. RBI has no idea what its doing.
+
+```
+"IPOS": "India Post Payments Bank",
+"IPPB": "India Post Payments Bank",
+```
+
+## `IPOS0000001`
+
+---
+
+# 3.1 AJAR/AJUX
+
+```
+"AJAR": "Ajara Urban Co-operative Bank",
+"AJUX": "Ajara Urban Co-operative Bank",
+```
+
+---
+
+## 3.2 CXBX (Chartered Sahakari Bank Niyamitha)
+
+`CSBX0CSB001` (Supports only IMPS, not listed by RBI)
+
+---
+
+## 3.3 KOEX (KEB Hana Bank)
+
+```
+KOEX0000001: RTGS/NEFT/IMPS
+KOEX0000002: RTGS/NEFT/IMPS
+KOEX00000SC: RTGS/IMPS
+```
+
+---
+
+# 4. The NPCI doesn't come under RTI
+
+> The contention arises from the fact that while it is incorporated as a non-profit organisation, 57 percent of its shares are held by public sector banks.
+
+> “In a reply to an RTI, we found that AP Hota, the chief general manager of the RBI, was deputed by the Bank for two years to the management. Moreover, the RTI also revealed that RBI had provided office space as well as an inventory list of items to NPCI.”
+
+## Judgement:
+
+> Commission is also of the view that it may be open to the complainantto seek information through public authority for NPCI i.e. RBI or Ministry of Financeas the case may be. That being so, the complaint of the complainant is unfounded and the same is rejected. <https://bit.ly/39dsFK6>
+
+---
+
+# 5. Companies still use MICR
+
+```
+000     000    000
+City    Bank  Branch
+```
+
+---
+
+# 6. IBAN
+
+## International Bank Account Number
+
+> the Committee felt that longest IBAN is most suitable for the country. Longest IBAN envisages 26 digits IBAN for the banks in India with 18 digit account number, 4 digit bank code, 2 digit country code and 2 check digits. Under this system, banks can continue to use the existing account numbers, and where necessary the number will be padded with zeros to make the length of 18 digits as required.
+
+`IN` + Check Digit + Bank Code + Account Number
+
+- Bank Code: `[:alpha:]{4}`
+- Check Digit: `[:digit:]{2}`
+- Account Number: `[:alphanum:]{18}`
+
+Source: <https://www.iban.in/structure.html>
+
+---
+
+# 7. Bank Mergers are fun!
+
+> After merger, for all outward IMPS transactions of associate banks the IFS Code will changeand will be intimated to customer. However for all the inward IMPS transaction bank willsupport old IFSC number till 1 Month from the date of merger.
+>
+> - [SBI](https://bank.sbi/webfiles/uploads/files/mergerofassociatebanks/IMPS%20Merger%20FAQ.pdf)
+
+---
+
+# 8. Naming banks is hard
+
+- 20 different ways to write "Co-operative"
+- Zhilla, Zila, Jila, Jhila, District
+- Sahkari, Sahakari, Sah.,
+
+---
+
+# 9. IFSC Issuance Process
+
+- RBI issues 4 letter Bank Codes.
+- They end in "X" for banks not connected to RBI payment/settlement systems
+- Banks inform RBI of IFSCs for each branch via [SFMS](http://www.idrbt.ac.in/sfms.html)
+- Banks inform NPCI separately of IFSCs for each branch via NFS (?)
+
+---
+
+# 10. So many codes
+
+- IFSC code for IMPS
+- IFSC code for NEFT/RTGS
+- MICR code for cheques
+- SWIFT/SWIFT-BIC/BIC code for International inbound transfers
+- IBAN (International Bank Account Number)
+- NBIN (National Bank Identification) `[:digit:]{4}``
+- MMID `[:digit:]{7}` (NBIN+MAS (Mobile Account Selector, `[:digit:]{3}`))
+
+---
+
+# 11. I have no idea what I'm doing
+
+- NBIN format
+- Compression/Bloom Filter attempts
+
+---
+
+# 12. NPCI has no idea what it's doing
+
+`@jio,@ezeepay,@lime,@purz,@s2b,@srcb,@upi`
+
+UPI handles with unknown issuing bank.
+
+What happens to MDR?
+
+---
+
+# 13. RBI doesn't care about data sanity
+
+## 13.1 Encoding Issues
+
+`"CHENNAI - CENOTAPH ROAD┬á"`
+`"1, CENOTAPH ROAD, CHENNAI.┬á"`
+
+---
+
+## 13.2 RBI Excel Sheets are broken
+
+```
+[WARN] IFSC code longer than 11 characters: IOBA0003378                                                  RO-TIRUPATHI, using IOBA0003378
+[WARN] IFSC code longer than 11 characters: BANK OF BARODA, using BANKOFBAROD
+[WARN] Second Entry found for HDFC0000917, discarding
+[WARN] Second Entry found for FDRL0001808, discarding
+[WARN] Second Entry found for ICIC0000248, discarding
+[WARN] Second Entry found for ICIC0000557, discarding
+[WARN] Second Entry found for ICIC0006252, discarding
+[WARN] Second Entry found for CNRB0006822, discarding
+[WARN] Second Entry found for DBSS0IN0901, discarding
+```
+
+---
+
+# 13.3 RBI Excel Sheets are very broken
+
+```
+[WARN] Second Entry found for ICIC0002261, discarding
+[WARN] Second Entry found for IDFB0040138, discarding
+[WARN] Second Entry found for CBIN0284329, discarding
+[WARN] Second Entry found for UTIB0002805, discarding
+[WARN] Second Entry found for DCBL0000126, discarding
+[WARN] Second Entry found for ICIC0000276, discarding
+[WARN] Second Entry found for ICIC0006033, discarding
+[WARN] IFSC code longer than 11 characters: IOBA0003379                                            RO-NAGERCOIL, using IOBA0003379
+[WARN] IFSC code longer than 11 characters: IOBA0003392
+[INFO] Removed BANKOFBAROD from the list
+```
+
+---
+
+![bg 80%](rbi-issues.jpg)
+
+---
+
+![bg 70%](rbi-response.png)
+
+---
+
+![bg 80%](rbi-email-1.png)
+
+---
+
+![bg 80%](rbi-email-2.png)
+
+---
+
+# 14. [NEFT blocks](https://github.com/razorpay/ifsc/issues/154)
+
+---
+
+# ![bg](https://fakeimg.pl/1920x800/ff4d4d/fff/?text=the+tech)
+
+---
+
+# tech
+
+1. scraper, written in ruby/bash (~400 lines)
+2. release notes generator script, written in PHP
+3. A patch manager to "fix" issues
+
+---
+
+```yaml
+---
+# https://github.com/razorpay/ifsc/issues/154
+action: patch
+patch:
+  NEFT: false
+ifsc:
+  # - KRTH0INBB00
+  - BCEY0000001
+  - BCEY0CHEN01
+  - KGRB0000001
+  - KGRB0000002
+  - KGRB0000004
+```
+
+---
+
+```yaml
+---
+# https://github.com/razorpay/ifsc/issues/126
+# Source: https://www.npci.org.in/upi-live-members
+# Last Updated: Jan 2020 (Count = 143)
+action: patch
+patch:
+  :upi: true
+banks:
+  - ABHY
+  - ACBX
+  - ADBX
+  - AGVX
+  - AIRP
+  - ALLA
+```
+
+---
+
+# Rigorous Tests
+
+## Ensure Coverage between datasets
+
+```
+testNames
+testConstants
+testCoverageAgainstBankNames
+testConstantsAgainstNames
+testSubletsAgainstConstants
+testConstantsAgainstCompleteBanksList
+testSubletCoverage
+testValidateJsonFormat
+testNpciListAgainstRbi
+testPatches
+```
+
+---
+
+## Ensure common tests between languages
+
+```json
+  "testBasicValidator": {
+    "KKBK0000261": true,
+    "HDFC0002854": true,
+  },
+  "testValidateStringLookup": {
+    "BOTM0NEEMRA": true,
+    "BARB0ZOOTIN": true
+  },
+  "testValidateInvalidCode": {
+    "BOTM0XEEMRA": false,
+  },
+  "testHPSC": {
+    "HPSC0000406": true,
+    "HPSC0000300": false
+  },
+  "testEdgeCases": {
+    "SBMY0040704": false
+  },
+  "testSBIOldCodes": {
+    "SBBJ0010004": false,
+    "SBBJ0010006": false,
+```
+
+---
+
+## Ensure coverage across languages
+
+```ruby
+it 'should match all constants defined in PHP' do
+    constants_file = File.readlines('src/php/Bank.php')
+  bank_constants = constants_file
+    .select { |e| e.match(/const/) }
+    .map { |e| e[/\s+const (\w{4})/, 1] }
+  bank_constants.each do |c|
+    expect(described_class::const_get(c)).to eq c.to_sym
+  end
+end
+```
+
+---
+
+## Ensure coverage across languages
+
+```js
+// Validates that all constants defined in PHP are also defined in Node
+let file = fs
+  .readFileSync('src/php/Bank.php')
+  .toString()
+  .split('\n')
+  .filter(l => {
+    return l.indexOf('const') > -1;
+  })
+  .map(l => {
+    return l.match(/\s+const (\w{4})/)[1];
+  })
+  .forEach(code => {
+    assert.equal(BANK[code], code);
+    assert.equal(IFSC.bank[code], code);
+  });
+```
+
+---
+
+## The API
+
+1. Has all the data committed (huge repo, split-off)
+2. Multi-stage docker build (150MB)
+3. Uses Ruby/Sinatra/Redis for serving requests
+
+---
