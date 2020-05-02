@@ -15,7 +15,8 @@ url: https://captnemo.in/talks/webpayments/
 
 # `whoami`
 
-TODO
+- Nemo <me@captnemo.in>
+- Tech/Security @ [Razorpay](https://razorpay.com)
 
 ---
 
