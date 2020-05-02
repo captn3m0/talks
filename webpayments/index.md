@@ -259,16 +259,12 @@ any third party is allowed to support the payment method.
 
 URL: `https://pay.google.com/gp/p/web_manifest.json`
 
-![](https://www.gstatic.com/instantbuy/icons/gpay_32.png)
 
 ```json
 {
   "short_name": "Google Pay",
   "name": "Google Pay",
   "icons": [{
-    "src": "https://www.gstatic.com/instantbuy/icons/gpay_24.png",
-    "sizes": "24x24"
-  },{
     "src": "https://www.gstatic.com/instantbuy/icons/gpay_32.png",
     "sizes": "32x32"
   }],
