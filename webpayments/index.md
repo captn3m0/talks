@@ -279,6 +279,8 @@ URL: `https://pay.google.com/gp/p/web_manifest.json`
 }
 ```
 
+---
+
 # recap
 
 So far, the user-agent has done the following:
