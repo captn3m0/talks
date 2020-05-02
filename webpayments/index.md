@@ -2,10 +2,11 @@
 title: Web Payment APIs
 description: A short talk on Web Payment APIs
 url: https://captnemo.in/talks/webpayments/
+paginate: true
 ---
 
 <!-- _class: lead -->
-
+<!-- _paginate: false -->
 # Web Payment APIs
 
 \- nemo
@@ -74,6 +75,16 @@ See [github.com/w3c/webpayments/wiki](https://github.com/w3c/webpayments/wiki) f
 - [Payment Method Identifiers](https://w3c.github.io/payment-method-id/): _what is a payment method?_
 - [Payment Method Manifest](https://w3c.github.io/payment-method-manifest/): _definition of a payment method_
 - [Payment Handler API](https://w3c.github.io/payment-handler/): _how a payment method is processed?_
+
+<!-- - [Payment Request API](https://w3c.github.io/payment-request/) -->
+<!-- : standardizes an API to allow merchants (i.e., Web sites selling physical or digital goods) to utilize one or more payment methods with minimal integration. User agents (e.g., browsers) facilitate the payment flow between merchant and user, mediating the user experience and providing consistency between different merchants and providers. -->
+<!-- - [Payment Method Identifiers](https://w3c.github.io/payment-method-id/) -->
+<!-- : defines the validation and (where applicable) registration of identifiers used for matching purposes by other W3C payments specifications. -->
+<!-- - [Payment Handler API](https://w3c.github.io/payment-handler/) -->
+<!-- :defines capabilities that enable Web applications to handle payment requests. The specification defines how Web-based payment handlers register their capabilities with the user agent, how the user agent communicates with them, and what information is exchanged. Note: Based on experience with the Payment Handler API, the Working Group is discussing creation of a new UI component where payments, authentication, and other activities can occur. This functionality would generalize some of the current payment-specific functionality of Payment Handler API. -->
+<!-- - [Payment Method Manifest](https://w3c.github.io/payment-method-manifest/) -->
+<!-- : allows the curators of a defined payment method or owners of a proprietary payment method to authorize (via a manifest file) which payment handlers may be used to fulfill the payment method. The scope of this work extends to all types of payment handlers, including native mobile apps and Web apps. -->
+
 ---
 
 # the talk
@@ -102,6 +113,15 @@ The details of how to fulfill a payment request for a given payment method is an
 
 ---
 
+![](ecosystem2.png)
+
+---
+
+![](flow.png)
+
+
+---
+
 # [Payment Method Identifier](https://w3c.github.io/payment-method-id/)
 
 - URL-based payment method identifier (say, `https://bitcoincore.org/` or `https://pay.wechat.com`).
@@ -115,7 +135,7 @@ humanized: how to identify and categorize various payment methods?
 
 >allows the curators of a defined payment method or owners of a proprietary payment method to authorize (via a manifest file) which payment handlers may be used to fulfill the payment method.
 
-humanized: defines the schema of a specific payment method. The one for `basic-card` is standardized in a [specification already](https://w3c.github.io/webpayments-methods-card/).
+humanized: defines the "how-to-process" action of a specific payment method. The one for `basic-card` is standardized in a [specification already](https://w3c.github.io/webpayments-methods-card/).
 
 ---
 
@@ -128,6 +148,8 @@ Host: alicepay.com
 HTTP/2 204
 Link: </pay/payment-manifest.json>; rel="payment-method-manifest"
 ```
+
+You can alternatively just redirect from your PMI URL, or serve the JSON directly on the PMI URL
 
 ---
 
@@ -147,7 +169,11 @@ A payment method manifest tells the user-agent "how to process payments for a pa
 }
 ```
 
-user-agent can go next to `https://alicepay.com/pay/app/webappmanifest.json` to *install* the AlicePay application.
+---
+
+# what happens?
+
+`user-agent` can go next to `https://alicepay.com/pay/app/webappmanifest.json` to *install* the AlicePay application.
 
 `supported_origins` defines which origins can be trusted to install an application for this payment method.
 
@@ -196,25 +222,77 @@ The application installation is based on W3C's [Web App Manifest specification](
 
 ---
 
+# What's inside the Payment Handler?
+
+A PaymentManager is an additional attribute to the `ServiceWorker` specification, which allows a piece of code to run/listen in background in your browser, even after the tab is closed.
+
+```
+PaymentManager {
+  instruments = PaymentInstruments {
+      delete(instrumentKey)
+      get(instrumentKey)
+      keys()
+      has(instrumentKey);
+      set(instrumentKey, PaymentInstrument details);
+      clear();
+  }
+  userHint
+}
+```
+
+---
+
+# Payment Instrument
+
+Defines what all different instruments a user might have registered against this method (Multiple wallets, bank accounts, cards etc).
+
+```
+PaymentInstrument {
+  // Visa Card ending in **1214
+  name;
+  // Visa icon
+  icons;
+  // PMI
+  method;
+  // Can be used to restrict card usage by network for eg.
+  capabilities;
+}
+```
+
+
+---
+
+# PaymentHandler API
+
+A payment handler listens on the `PaymentRequestEvent`, and returns a `PaymentHandlerResponse` once done.
+
+```
+PaymentHandlerResponse {
+  methodName // PMI
+  details {}
+  payerName;
+  payerEmail;
+  payerPhone;
+  shippingAddress;
+  shippingOption;
+}
+```
+
+---
+
+![bg contain](https://developers.google.com/web/fundamentals/payments/images/web-payment-apps/payment-handler-flow.png)
+
+---
+
 # Payment Handler
 
 Each payment handler defines:
 
-1. Steps to check if a payment can be made:
-2. Steps to respond to a payment request:
+1. Steps to check if a payment can be made (listen to `CanMakePaymentEvent`)
+2. Steps to respond to a payment request: (`PaymentRequestEvent`)
   >The structure of this object is specific to each payment method.
-3. Steps for when a user changes payment method (optional)
+3. Steps for when a user changes payment method (optional) (`PaymentRequestDetailsUpdate`)
   >Steps that describe how to handle the user changing payment method or monetary instrument (e.g., from a debit card to a credit card)
-
----
-
-# overview
-
-TODO: Move this higher?
-
-![](ecosystem.png)
-
-[ref](https://www.w3.org/2018/Talks/ij_payments_20181009/w3c.pdf)
 
 ---
 
@@ -223,13 +301,54 @@ TODO: Move this higher?
 
 ---
 
-# Future Scope
+# Native Applications?
 
-- Installing a payment app is clunky, maybe we can just install the service-worker directly.
+You can declare support for native applications via a few non-standardized changes to the payment method manifest:
+
+```json
+{
+  "related_applications": [{
+    "platform": "play",
+    "id": "com.bobpay.app",
+    "min_version": "1",
+    "fingerprints": [{
+      "type": "sha256_cert",
+      "value": "92:5A:39:05:C5:B9:EA:BC:71:48:5F:F2"
+    }],
+    "url": "https://play.google.com/store/apps/details?id=com.bobpay.app"
+  }]
+}
+```
 
 ---
 
-# references
+
+# Native applications (2)
+
+Instead of using service-workers now, your payment application can rely on platform-specific APIs for the same purpose. Android uses Intents, for eg.
+
+![](https://developers.google.com/web/fundamentals/payments/images/android-payment-apps/diagram5.png)
+
+---
+
+# In the Wild
+
+- Google Pay is already using Payments API to support cross-platform Payments, by declaring a new "https://google.com/pay" payment method.
+- Apple Pay runs in browsers [using the Payment Request API](https://webkit.org/blog/8182/introducing-the-payment-request-api-for-apple-pay/).
+- So does [Samsung Pay](https://medium.com/samsung-internet-dev/how-to-take-payments-on-the-web-with-the-payment-request-api-a523f6fc7c1f)
+- Payment processors are adding support for it: [Stripe](https://stripe.com/docs/payment-request-api), [BrainTree](https://developers.braintreepayments.com/guides/payment-request/overview), [Worldline](https://blog.worldline.tech/2018/07/25/new-web-standards.html)
+- Facebook implements it within their in-app browser for the Mobile SDK.
+
+---
+
+# Future Scope
+
+- Installing a payment app is clunky, maybe we can just install the service-worker directly.
+- Lots of work happening towards standardization of non-card payments (such as SEPA).
+
+---
+
+# References
 
 - [Web Payments Working Group Blog](https://www.w3.org/blog/wpwg/)
 - [ Web Payments Working Group Charter ](https://www.w3.org/Payments/WG/charter-201912.html)
