@@ -3,6 +3,7 @@ title: Web Payment APIs
 description: A short talk on Web Payment APIs
 url: https://captnemo.in/talks/webpayments/
 paginate: true
+footer: Slides: [captnemo.in/talks/webpayments](https://captnemo.in/talks/webpayments/)
 ---
 
 <!-- _class: lead -->
@@ -11,6 +12,7 @@ paginate: true
 
 \- nemo
 (RFCs We Love, May 2020)
+
 
 ---
 
@@ -38,7 +40,6 @@ paginate: true
 - HTML
 - RDF
 - SOAP
-- SPARQL
 - SVG
 - XHTML
 - XML
@@ -49,6 +50,17 @@ paginate: true
 # [demo](https://paymentrequest.show/demo)
 
 Before we start, let's do a quick demo of how it all comes together.
+
+---
+
+# why?
+
+<!-- Bitcoin exists, and Amazon has been around for more than 2 decades, why do we need web payments? -->
+
+- Make it easier to accept payments world-wide.
+- Can we have "Payment negotiation", ala content-negotiation?
+- Can we have privacy-preserving payment methods?
+- Every webshop has its own checkout/cart implementation - can we standardize this?
 
 ---
 
@@ -87,13 +99,13 @@ See [github.com/w3c/webpayments/wiki](https://github.com/w3c/webpayments/wiki) f
 
 ---
 
-# the talk
+# Agenda
 
 Try to understand how we can complete a payment entirely from within your browser _without relying on any proprietary APIs_ (as a processor/merchant), and yet _being compatible with any payment instrument_.
 
 ---
 
-# definitions
+# Definitions
 
 The **payment method**: the means that the payer uses to pay the payee (e.g., a basic card payment). They are uniquely identified via a **Payment Method Identifier** (PMI)
 
@@ -103,7 +115,7 @@ The details of how to fulfill a payment request for a given payment method is an
 
 ---
 
-# examples
+# Examples
 
 **payment method**: Paytm Wallet Account, UPI, Card, Gift Card, Voucher Code, Bitcoin.
 
@@ -113,7 +125,15 @@ The details of how to fulfill a payment request for a given payment method is an
 
 ---
 
+# ecosytem overview
+
+---
+
 ![](ecosystem2.png)
+
+---
+
+# Flow
 
 ---
 
@@ -298,6 +318,22 @@ Each payment handler defines:
 
 # [Payment Request API](https://w3c.github.io/payment-request/)
 
+PaymentRequest interface
+
+```
+id
+show()
+abort()
+canMakePayment()
+hasEnrolledInstrument()
+shippingAddress
+shippingType
+onmerchantvalidation
+onshippingaddresschange
+shippingOption
+onshippingoptionchange
+onpaymentmethodchange
+```
 
 ---
 
@@ -339,16 +375,33 @@ Instead of using service-workers now, your payment application can rely on platf
 - Payment processors are adding support for it: [Stripe](https://stripe.com/docs/payment-request-api), [BrainTree](https://developers.braintreepayments.com/guides/payment-request/overview), [Worldline](https://blog.worldline.tech/2018/07/25/new-web-standards.html)
 - Facebook implements it within their in-app browser for the Mobile SDK.
 
+The "Payment Handler" for most of the above implementations is a close browser<>payment app coupling, with an application such as Samsung/Apple/Google Pay.
+
+---
+
+# Current Status
+
+- All major browser implement Payment Request API to various degrees, primarily for the `basic-card` usecase.
+- Payment Handler registration is only supported in Chrome.
+
 ---
 
 # Future Scope
 
 - Installing a payment app is clunky, maybe we can just install the service-worker directly.
-- Lots of work happening towards standardization of non-card payments (such as SEPA).
+- Lots of work happening towards standardization of non-card payments (such as SEPA, Tokenized Cards, credit-transfer).
+
+---
+
+# Questions?
+
+- Tweet to me [@captn3m0](https://twitter.com/captn3m0)
+- Emails: <me@captnemo.in>
 
 ---
 
 # References
 
 - [Web Payments Working Group Blog](https://www.w3.org/blog/wpwg/)
-- [ Web Payments Working Group Charter ](https://www.w3.org/Payments/WG/charter-201912.html)
+- [Web Payments Working Group Charter](https://www.w3.org/Payments/WG/charter-201912.html)
+- [Mozilla Developer Network docs](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
