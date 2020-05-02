@@ -420,6 +420,17 @@ Instead of using service-workers now, your payment application can rely on platf
 
 ---
 
+# sample-indian-example
+
+- Merchant Website: <https://flipkart.com>
+- Payment Application: <https://icicibank.com> (and the corresponding iOS/Android apps)
+- Payment Method: <https://rbi.org.in/neft>
+- Payment Handler: The serviceworker installed when you first visited your bank website. Marked as usable across all websites.
+- Payment Request: A browser redirect to a <https://pay.icicibank.com> with all required params for the payment. A few extra checks (enough balance etc) can be done by the handler before the request is complete.
+- Payment Instrument: Each bank account with ICICI becomes a separate instrument.
+
+---
+
 # In the Wild
 
 <!-- Is this available? -->
