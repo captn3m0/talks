@@ -33,6 +33,8 @@ footer: Slides: [captnemo.in/talks/webpayments](https://captnemo.in/talks/webpay
 
 # W3C
 
+<!-- W3C is the internet-standards-body for the World Wide Web. You've likely used lots of their standards -->
+
 - ActivityPub
 - CGI
 - CSS
@@ -65,6 +67,8 @@ Before we start, let's do a quick demo of how it all comes together.
 ---
 
 # specifications*
+
+<!-- There are 4 published standards (all in draft stage) and a few more auxiliary publications from W3C's Web Payments Working Group -->
 
 - [Payment Request API](https://w3c.github.io/payment-request/)
 <!-- : standardizes an API to allow merchants (i.e., Web sites selling physical or digital goods) to utilize one or more payment methods with minimal integration. User agents (e.g., browsers) facilitate the payment flow between merchant and user, mediating the user experience and providing consistency between different merchants and providers. -->
@@ -101,11 +105,15 @@ See [github.com/w3c/webpayments/wiki](https://github.com/w3c/webpayments/wiki) f
 
 # Agenda
 
+<!-- While removing propreitary stuff isn't a goal for the specs, it is a byproduct. -->
+
 Try to understand how we can complete a payment entirely from within your browser _without relying on any proprietary APIs_ (as a processor/merchant), and yet _being compatible with any payment instrument_.
 
 ---
 
 # Definitions
+
+<!-- We'll be going bottomsup, and looking at the smallest building blocks first. -->
 
 The **payment method**: the means that the payer uses to pay the payee (e.g., a basic card payment). They are uniquely identified via a **Payment Method Identifier** (PMI)
 
@@ -144,6 +152,8 @@ The details of how to fulfill a payment request for a given payment method is an
 
 # [Payment Method Identifier](https://w3c.github.io/payment-method-id/)
 
+<!-- You want a way to ensure that multiple payment processors work against the same initial payment request. Hence a need to standardize these identifiers. -->
+
 - URL-based payment method identifier (say, `https://bitcoincore.org/` or `https://pay.wechat.com`).
 - or a standardized payment method identifier (currently only `basic-card` is on the registry).
 
@@ -152,6 +162,8 @@ humanized: how to identify and categorize various payment methods?
 ---
 
 # [Payment Method Manifest](https://w3c.github.io/payment-method-manifest/)
+
+<!-- A payment method should be "discoverable", and that implies a manifest of some sort where a user-agent can find more details about the payment method -->
 
 >allows the curators of a defined payment method or owners of a proprietary payment method to authorize (via a manifest file) which payment handlers may be used to fulfill the payment method.
 
@@ -186,6 +198,19 @@ A payment method manifest tells the user-agent "how to process payments for a pa
     "https://bobpay.xyz",
     "https://alicepay.friendsofalice.example"
   ]
+}
+```
+
+---
+
+# Google Pay's Payment Method Manifest
+
+`curl -A "AppleWebKit/1 Chromium/1 Chrome/1" https://pay.google.com/gp/p/payment_method_manifest.json`
+
+```json
+{
+  "default_applications": ["https://pay.google.com/gp/p/web_manifest.json"],
+  "supported_origins": ["https://pay.google.com"]
 }
 ```
 
@@ -227,6 +252,32 @@ A payment application hosted at either `alicepay.com`, `beta.alicepay.com`, or `
 any third party is allowed to support the payment method.
 
 ---
+
+# Google Pay's Web Manifest
+
+*Not part of the webpayments spec*
+
+URL: `https://pay.google.com/gp/p/web_manifest.json`
+
+![](https://www.gstatic.com/instantbuy/icons/gpay_32.png)
+
+```json
+{
+  "short_name": "Google Pay",
+  "name": "Google Pay",
+  "icons": [{
+    "src": "https://www.gstatic.com/instantbuy/icons/gpay_24.png",
+    "sizes": "24x24"
+  },{
+    "src": "https://www.gstatic.com/instantbuy/icons/gpay_32.png",
+    "sizes": "32x32"
+  }],
+  "serviceworker": {
+    "src": "/gp/p/service_worker.js",
+    "use_cache": true
+  }
+}
+```
 
 # recap
 
@@ -369,6 +420,8 @@ Instead of using service-workers now, your payment application can rely on platf
 
 # In the Wild
 
+<!-- Is this available? -->
+
 - Google Pay is already using Payments API to support cross-platform Payments, by declaring a new "https://google.com/pay" payment method.
 - Apple Pay runs in browsers [using the Payment Request API](https://webkit.org/blog/8182/introducing-the-payment-request-api-for-apple-pay/).
 - So does [Samsung Pay](https://medium.com/samsung-internet-dev/how-to-take-payments-on-the-web-with-the-payment-request-api-a523f6fc7c1f)
@@ -390,6 +443,7 @@ The "Payment Handler" for most of the above implementations is a close browser<>
 
 - Installing a payment app is clunky, maybe we can just install the service-worker directly.
 - Lots of work happening towards standardization of non-card payments (such as SEPA, Tokenized Cards, credit-transfer).
+- Getting the drafts published as a W3C recommendation
 
 ---
 
@@ -405,3 +459,4 @@ The "Payment Handler" for most of the above implementations is a close browser<>
 - [Web Payments Working Group Blog](https://www.w3.org/blog/wpwg/)
 - [Web Payments Working Group Charter](https://www.w3.org/Payments/WG/charter-201912.html)
 - [Mozilla Developer Network docs](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [Developer information for Payment Request API](https://github.com/w3c/payment-request-info)
