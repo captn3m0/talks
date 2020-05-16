@@ -1,11 +1,13 @@
 ---
 paginate: true
 inlineSVG: true
+footer: Slides: [captnemo.in/talks/ifsc](https://captnemo.in/talks/ifsc/)
 ---
 
-# things nobody ever tells you about IFSC
+# IFSC
 
 \-nemo
+\- Payments & Fintech deepdives
 
 ---
 
@@ -33,9 +35,17 @@ inlineSVG: true
 
 ---
 
+## Agenda
+
+1. The [ifsc.razorpay.com](https://ifsc.razorpay.com) project.
+2. IFSC in the background.
+3. Future Scope / Collaboration ideas.
+
+---
+
 ## some metrics first
 
-- 4 Years since first release
+- 4 Years since first release (Feb 2016)
 - 64 releases
 - 72 tags
 
@@ -50,7 +60,6 @@ YAML                             5              4             24           1256
 Markdown                         4            157              0            383
 Elixir                           8             53             63            308
 Bourne Shell                     2             10             13             31
-XML                              1              0              0             16
 -------------------------------------------------------------------------------
 SUM:                            47            536            192           7613
 -------------------------------------------------------------------------------
@@ -96,14 +105,22 @@ The IFSC Toolkit includes:
 
 RBI publishes a list of all RTGS/NEFT branches as excel sheets:
 
-- [NEFT](https://rbidocs.rbi.org.in/rdocs/content/docs/68774.xlsx)
-- [RTGS](https://rbidocs.rbi.org.in/rdocs/RTGS/DOCs/RTGEB0815.xlsx)
+- NEFT: [rbidocs.rbi.org.in/rdocs/content/docs/68774.xlsx](https://rbidocs.rbi.org.in/rdocs/content/docs/68774.xlsx)
+- RTGS: [rbidocs.rbi.org.in/rdocs/RTGS/DOCs/RTGEB0815.xlsx](https://rbidocs.rbi.org.in/rdocs/RTGS/DOCs/RTGEB0815.xlsx)
 
 NPCI publishes a few lists:
 
-- [All Live ACH member banks](https://www.npci.org.in/national-automated-clearing-live-members-1)
-- [All UPI live member banks](https://www.npci.org.in/upi-live-members)
+- All Live ACH member banks: [npci.org.in/national-automated-clearing-live-members-1](https://www.npci.org.in/national-automated-clearing-live-members-1)
+- All UPI live member banks: [npci.org.in/upi-live-members](https://www.npci.org.in/upi-live-members)
 - [NBIN codes](https://docplayer.net/25942453-Imps-procedural-guidelines.html), published in IMPS Procedural guidelines v1.7
+
+---
+
+## Additional Sources
+
+- Any interim RBI circulars
+- Any guidelines from NPCI
+- A few RBI/NCPI circulars
 
 ---
 
@@ -128,6 +145,32 @@ List of all Banks in India\* with the following details:
 
 ---
 
+## `banks.json`
+
+```json
+{
+  "SBIN": {
+    // Bank Code
+    "code": "SBIN",
+    // Bank Type
+    "type": "PSB",
+    // Primary IMPS IFSC
+    "ifsc": "SBIN0004343",
+    "micr": "400002000",
+    // IIN = BIN
+    "iin": "508548",
+    // Aadhaar Payments Bridge System
+    "apbs": true,
+    "ach_credit": true,
+    "ach_debit": true,
+    "nach_debit": true,
+    "upi": true
+  }
+}
+```
+
+---
+
 # `by-bank.tar.gz` (8.4MB)
 
 A tar.gz file containing one JSON file for each bank, with a list of all known branches with the following details for every branch:
@@ -136,11 +179,34 @@ A tar.gz file containing one JSON file for each bank, with a list of all known b
 - Branch name
 - Address (Centre/District/State/Address/Contact)
 - Bank Name
-- UPI Support (`true/false`)
-- RTGS Support (`true/false`)
-- NEFT Support (`true/false`)
-- IMPS Support (`true/false`)
+- UPI/RTGS/NEFT/IMPS Support (`true/false`)
 - MICR
+
+---
+
+# `by-bank/PYTM.json`
+
+Same as the data at <https://ifsc.razorpay.com/PYTM0000001>
+
+```json
+{
+  "PYTM0000001": {
+    "BANK": "PAYTM PAYMENTS BANK LTD",
+    "IFSC": "PYTM0000001",
+    "BRANCH": "RTGS-HO",
+    "CENTRE": "NOIDA",
+    "DISTRICT": "NOIDA",
+    "STATE": "UTTAR PRADESH",
+    "ADDRESS": "B-121,Sector-5,Noida-201301",
+    "CONTACT": "33996699",
+    "IMPS": true,
+    "RTGS": true,
+    "CITY": "Gautam Buddh Nagar",
+    "NEFT": true,
+    "MICR": null
+  }
+}
+```
 
 ---
 
@@ -176,7 +242,19 @@ A somewhat-compressed, human-readable JSON file containing all valid IFSCs for a
 
 # `banknames.json`
 
-A manually curated human-readable list of all banknames against 4 letter bank codes. Currently at 1425 entries.
+A manually curated human-readable list of all banknames against 4 letter bank codes. Currently at 1437 entries.
+
+```json
+  "CCOB": "City Co-operative Bank",
+  "CCUX": "Chengelpattu Co-operative Urban Bank",
+  "CDCX": "Cuddalore District Central Co-operative Bank",
+  "CEBX": "Central Co-operative Bank Bikaner",
+  "CGBX": "Chhattisgarh Gramin Bank",
+  "CGGX": "Chaitanya Godavari Grameena Bank",
+  "CHAS": "JP Morgan Chase Bank",
+  "CHAX": "Chamoli Zila Sahkari Bank",
+  "CHBX": "Chamba Urban Co-operative Bank",
+```
 
 ---
 
@@ -203,12 +281,6 @@ Has a single `/:ifsc` endpoint that returns all the information about the branch
   "IFSC": "PUNB0026200"
 }
 ```
-
----
-
-## Metrics
-
-It supports prometheus metrics over `/metrics`.
 
 ---
 
@@ -337,6 +409,8 @@ Razorpay::IFSC::Bank.get_details Razorpay::IFSC::Bank::PUNB
 
 ---
 
+# polyglot
+
 ```
 src/banknames.json
 src/ruby
@@ -374,7 +448,7 @@ src/php
 - Private (Private Sector Banks)
 - PSB (Public Sector Bank)
 - RRB (Regional Rural Bank)
-- S-UCB (?? Urban Co-operative Banks)
+- S-UCB (State Urban Co-operative Banks)
 - SCB (State Co-operative Bank)
 - SFB (Small Finance Bank)
 
@@ -424,11 +498,13 @@ KOEX00000SC: RTGS/IMPS
 
 ## Judgement:
 
-> Commission is also of the view that it may be open to the complainantto seek information through public authority for NPCI i.e. RBI or Ministry of Financeas the case may be. That being so, the complaint of the complainant is unfounded and the same is rejected. <https://bit.ly/39dsFK6>
+> Commission is also of the view that it may be open to the complainantto seek information through public authority for NPCI i.e. RBI or Ministry of Financeas the case may be. That being so, the complaint of the complainant is unfounded and the same is rejected. <https://bit.ly/39dsFK6> (Dec 2019)
 
 ---
 
 # 5. Companies still use MICR
+
+(Magnetic Ink Character Recognition code)
 
 ```
 000     000    000
@@ -455,9 +531,11 @@ Source: <https://www.iban.in/structure.html>
 
 # 7. Bank Mergers are fun!
 
-> After merger, for all outward IMPS transactions of associate banks the IFS Code will changeand will be intimated to customer. However for all the inward IMPS transaction bank willsupport old IFSC number till 1 Month from the date of merger.
+> After merger, for all outward IMPS transactions of associate banks the IFS Code will changeand will be intimated to customer. However for all the inward IMPS transaction bank will support old IFSC number till 1 Month from the date of merger.
 >
 > - [SBI](https://bank.sbi/webfiles/uploads/files/mergerofassociatebanks/IMPS%20Merger%20FAQ.pdf)
+
+But every merger is handled differently.
 
 ---
 
@@ -467,6 +545,16 @@ Source: <https://www.iban.in/structure.html>
 - Zhilla, Zila, Jila, Jhila, District
 - Sahkari, Sahakari, Sah.,
 
+This was so problematic, that I ended up writing [Guidelines on how to keep bank names consistent](https://github.com/razorpay/ifsc/blob/master/CONTRIBUTING.md#bank-names-guidelines).
+
+---
+
+# 8.5 Guiding Principles
+
+1. Keep "dataset" current (no dead IFSCs).
+2. Keep list of banks comprehensive (include dead banks).
+3. Only use official upstream sources.
+
 ---
 
 # 9. IFSC Issuance Process
@@ -475,6 +563,7 @@ Source: <https://www.iban.in/structure.html>
 - They end in "X" for banks not connected to RBI payment/settlement systems
 - Banks inform RBI of IFSCs for each branch via [SFMS](http://www.idrbt.ac.in/sfms.html)
 - Banks inform NPCI separately of IFSCs for each branch via NFS (?)
+- Issuance of each branch code is entirely owned by the bank.
 
 ---
 
@@ -567,6 +656,60 @@ What happens to MDR?
 
 # 14. [NEFT blocks](https://github.com/razorpay/ifsc/issues/154)
 
+> the below following banks have been temporarily kept out of NEFT system (only) due to technical non-compliance, as such these bank will not be in a position to receive or make payments through NEFT till further orders.
+
+> The NEFT payments will be REJECTED by RBI with reason as “SENDER OR BENEFICIARY BANK NOT PARTICIPANT OF NEFT”, if we received and sent for settlement.
+
+---
+
+# NEFT Blocks
+
+| Bank Name                    | IFSC Main Code | Total Branches |
+| ---------------------------- | -------------- | -------------- |
+| BANK OF CEYLON               | BCEY           | 3              |
+| KAVERI GRAMEENA BANK         | KGRB           | 488            |
+| KERALA GRAMIN BANK           | KLGB           | 650            |
+| KRUNG THAI BANK PCL          | KRTH           | 2              |
+| PRAGATHI KRISHNA GRAMIN BANK | PKGB           | 1160           |
+| SBM BANK MAURITIUS LTD       | STCB           | 2              |
+
+---
+
+# ![bg](https://fakeimg.pl/1920x800/ff4d4d/fff/?text=HDFC0CSSUCB&font=bebas)
+
+---
+
+# 15. Sublet Branches
+
+```json
+{
+  "RTGS": true,
+  "CONTACT": "9890960146",
+  "CITY": "SOLAPUR",
+  "IMPS": true,
+  "ADDRESS": "6151 1 SIDDHESHWAR SHOPING CENTER SHOP NO 18 19 SIDHESHWAR PETH SOLAPUR",
+  "DISTRICT": "SOLAPUR",
+  "CENTRE": "SOLAPUR",
+  "STATE": "MAHARASHTRA",
+  "NEFT": true,
+  "BRANCH": "Solapur Social Urban Co-operative Bank IMPS",
+  "MICR": "413590002",
+  "UPI": true,
+  "BANK": "Solapur Social Urban Co-operative Bank",
+  "BANKCODE": "SSLX",
+  "IFSC": "HDFC0CSSUCB"
+}
+```
+
+---
+
+# Sublet Identification
+
+1. [NPCI ACH List](https://www.npci.org.in/national-automated-clearing-live-members-1) documents the IFSC that each bank provides for their IMPS setup
+2. The Excel sheets provided by RBI have a bank name in the "branch name" field.
+
+Becomes much harder because bank names submitted to RBI may be different from what's submitted to NPCI, and doing exact matches for bank names is impossible.
+
 ---
 
 # ![bg](https://fakeimg.pl/1920x800/ff4d4d/fff/?text=the+tech)
@@ -578,6 +721,20 @@ What happens to MDR?
 1. scraper, written in ruby/bash (~400 lines)
 2. release notes generator script, written in PHP
 3. A patch manager to "fix" issues
+
+---
+
+# run it yourselves:
+
+```sh
+git clone https://github.com/razorpay/ifsc.git
+cd ifsc/scraper
+bundle install
+cd scripts
+./bootstrap.sh
+```
+
+Check the `ifsc/scraper/scripts/data` directory once it finishes.
 
 ---
 
@@ -688,13 +845,13 @@ let file = fs
   .readFileSync('src/php/Bank.php')
   .toString()
   .split('\n')
-  .filter(l => {
+  .filter((l) => {
     return l.indexOf('const') > -1;
   })
-  .map(l => {
+  .map((l) => {
     return l.match(/\s+const (\w{4})/)[1];
   })
-  .forEach(code => {
+  .forEach((code) => {
     assert.equal(BANK[code], code);
     assert.equal(IFSC.bank[code], code);
   });
@@ -710,6 +867,59 @@ let file = fs
 
 ---
 
+# Future Scope
+
+1. [SWIFT code](https://github.com/razorpay/ifsc/issues/125) for every bank branch. ([In Progress](https://github.com/razorpay/ifsc/pull/176))
+2. [AePS Membership Status](https://github.com/razorpay/ifsc/issues/186)
+3. Document _all sublet branches, even the undeclared ones_. ([WIP](https://github.com/razorpay/ifsc/pull/166))
+4. Document _all banks, even the undeclared/dead ones_ ([WIP](https://github.com/razorpay/ifsc/pull/166))
+5. Support for more languages. Contributions welcome.
+6. Improve API to support usecases with free-text search.
+7. Add support for hotlinking bank logos (`https://ifsc.razorpay.com/PUNB.svg`)
+
+---
+
+# Special Sublet Work
+
+```yaml
+HDFC0CSLABK: Subhadra Local Area Bank
+HDFC0CSLCBL: Shree Laxmi Co-operative Bank
+HDFC0CSLKUB: Shri Laxmikrupa Urban Co-operative Bank
+HDFC0CSMCBL: Satana Merchants Co-operative Bank
+HDFC0CSMLCB: Shree Mahayogi Lakshmamma Co-operative Bank
+HDFC0CSMNSB: Sanmitra Mahila Nag Sahakari Bank
+HDFC0CSMPAY: Sangamner Merch Co-operative Bank
+HDFC0CSMPBA: Shankarrao Mohite Patil Sah.bank
+HDFC0CSMRTB: Smriti Nagrik Sahakari Bank
+HDFC0CSMSSB: Shri Mahila Sewa Sahakari Bank
+HDFC0CSMUCB: Shri Mahavir Urb Co-operative Bank
+HDFC0CSNCBL: Saraspur Nagarik Co. Op. Bank
+HDFC0CSNCBR: Surat National Co-operative Bank
+HDFC0CSNSB0: Sankheda Nagrik Sahakari Bank
+HDFC0CSNSBB: Sarakari Naukarara Sahakari Bank
+HDFC0CSNSBH: Sihor Nagarik Sahakari Bank
+HDFC0CSNSBL: Sonbhadra Nagar Sahakari Bank
+HDFC0CSNSBM: Sadguru Nagrik Sahakari Bank
+HDFC0CSNSBS: Sehore Nagrik Sahakari Bank
+```
+
+---
+
+# RBI
+
+List of all [Non-scheduled Urban Co-operative Banks](https://rbidocs.rbi.org.in/rdocs/Content/pdfs/nonschedulecoop.pdf)(PDF):
+
+```yaml
+Name: Shankerrao Mohite-Patil Sahakari Bank Ltd
+RO Name: NAGPUR
+HO Address: "Sahakar Mandir", Mahaveer Path, Akluj, Solapur, Maharashtra
+Pincode: 413101
+```
+
+<!-- Limbo Bank, registered with RBI, but without a code -->
+
+---
+
 ## [captnemo.in/talks/ifsc/](https://captnemo.in/talks/ifsc/)
 
-Source: https://github.com/captn3m0/talks/tree/gh-pages/ifsc
+Source : https://github.com/captn3m0/talks/tree/gh-pages/ifsc
