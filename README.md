@@ -13,5 +13,8 @@ Various talks & Lectures that I have given
 11. [Terraforming Tatooine](https://www.beautiful.ai/deck/-L4w5j_sJ9XkKnzf1OXt) - A short talk at [Barcamp Bangalore Spring 2018](https://barcampbangalore.com/bcb/bcb-spring-2018/terraform-docker-nemo) on how I manage my home server using Terraform and Docker. PDF version is available at [speakerdeck](https://speakerdeck.com/captn3m0/terraforming-tatooine)
 12. [crypto.koans](/talks/crypto.koans/) - Koans to help you learn openssl/PKI.
 13. [HomeServer Talk](/talks/hs/) - A talk on running my own homeserver. Presented at [RootConf '19](https://rootconf.in)
+14. [Monopoly: Why its a terrible game](https://slides.com/captn3m0/monopoly) - A talk on the various mistakes Monopoly makes in its game design, and why they are important game breaking issues.
+15. [Web Payment APIs](/talks/webpayments/) - Presented a talk on W3C's Web Payment APIs at RFCs We Love.
+16. [Constraint Programming to solve Modern Art](https://docs.google.com/presentation/d/1d4C3kDONasnhOCVLpz8RDQpEH-7haG7pRJnc9E3njL4/edit?usp=sharing) - A short talk on my work on solving the [Modern Art](https://github.captnemo.in/modernart) boardgame.
 
 A few more talks that I've done are on my [SpeakerDeck account](https://speakerdeck.com/captn3m0)
