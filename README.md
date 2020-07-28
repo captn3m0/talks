@@ -17,5 +17,9 @@ Various talks & Lectures that I have given
 15. [Web Payment APIs](/talks/webpayments/) - Presented a talk on W3C's Web Payment APIs at RFCs We Love.
 16. [Constraint Programming to solve Modern Art](https://docs.google.com/presentation/d/1d4C3kDONasnhOCVLpz8RDQpEH-7haG7pRJnc9E3njL4/edit?usp=sharing) - A short talk on my work on solving the [Modern Art](https://github.captnemo.in/modernart) boardgame.
 17. [IFSC](/ifsc/) [[pdf](ifsc.pdf)] - A talk at the Cashless Consumer study group talking about banking codes in India, and the IFSC project in general.
+18. [Video streaming on Linux](/talks/v4l.html).
+19. [HPACK - Header Compression in HTTP/2](/talks/hpack/).
 
-A few more talks that I've done are on my [SpeakerDeck account](https://speakerdeck.com/captn3m0)
+A few more talks that I've done are on my [SpeakerDeck account](https://speakerdeck.com/captn3m0) and my [slides.com](https://slides.com/captn3m0/) profile page.
+
+Source for most of these is available on the [captn3m0/talks](https://github.com/captn3m0/talks) repository. If you have any questions regarding any of the talks, feel free to reach out at <talks@captnemo.in>.
