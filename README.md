@@ -1,8 +1,5 @@
----
-title: captn3m0/talks
-description: Talks from Nemo / Abhay Rana
-tags: nemo, talks, captnemo, ifsc, http, security, terraform
----
+# captnemo.in/talks
+
 Various talks & Lectures that I have given
 
 1.  ux - UX & Usability Designing ([SpeakerDeck](https://speakerdeck.com/u/captn3m0/p/ux-and-usability-designing) [Online](https://captnemo.in/talks/ux/ 'Made via Reveal.js'))
