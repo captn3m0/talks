@@ -19,6 +19,7 @@ Various talks & Lectures that I have given
 17. [IFSC](/ifsc/) [[pdf](ifsc.pdf)] - A talk at the Cashless Consumer study group talking about banking codes in India, and the IFSC project in general.
 18. [Video streaming on Linux](/talks/v4l.html).
 19. [HPACK - Header Compression in HTTP/2](/talks/hpack/).
+20. [Sanderson's Laws of Magic](https://docs.google.com/presentation/d/1SNEEh2_i93V64Fnzg8_05vOGjJMSuagX8IyrLt-5xXk/present)
 
 A few more talks that I've done are on my [SpeakerDeck account](https://speakerdeck.com/captn3m0) and my [slides.com](https://slides.com/captn3m0/) profile page.
 
