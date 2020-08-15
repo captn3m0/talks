@@ -1,0 +1,24 @@
+From: foo1@bar.net
+To: foo2@bar.net
+Subject: A simple example
+Mime-Version: 1.0
+Content-Type: multipart/related; boundary="never-graduate";
+         type=Text/HTML
+--never-graduate
+Content-Type: Text/HTML; charset=US-ASCII
+
+to the other body part, for example through a statement such as:
+<img src="cid:foo4*foo1@bar.net">
+
+--never-graduate
+
+Content-ID: <foo4*foo1@bar.net>
+Content-Type: IMAGE/GIF
+Content-Transfer-Encoding: BASE64
+
+R0lGODlhGAGgAPEAAP/////ZRaCgoAAAACH+PUNvcHlyaWdodCAoQykgMTk5
+NSBJRVRGLiBVbmF1dGhvcml6ZWQgZHVwbGljYXRpb24gcHJvaGliaXRlZC4A
+etc...
+
+--never-graduate--
+# remember to pitch for RFCs We Love

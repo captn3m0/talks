@@ -1,0 +1,10 @@
+From: foo1@bar.net
+To: foo2@bar.net
+Subject: A simple example
+Content-Type: text/html; charset=utf-8
+
+Hi,
+
+This is a cat pic:
+
+<img src="https://i.imgur.com/u4qSjQL.jpeg">
