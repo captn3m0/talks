@@ -21,6 +21,7 @@ Various talks & Lectures that I have given
 19. [HPACK - Header Compression in HTTP/2](/talks/hpack/).
 20. [Sanderson's Laws of Magic](https://docs.google.com/presentation/d/1SNEEh2_i93V64Fnzg8_05vOGjJMSuagX8IyrLt-5xXk/present)
 21. [multipart-emails](/talks/email-protocols/) - A short talk on how linking with mid/cid schemes works in multipart-emails. Related work: https://github.com/awdeorio/mailmerge/issues/86
+22. [Payment Systems in India](/payment-systems-in-india/) - A short 10 minute presentation on _some of the digital payment_ ecosystem in India.
 
 A few more talks that I've done are on my [SpeakerDeck account](https://speakerdeck.com/captn3m0) and my [slides.com](https://slides.com/captn3m0/) profile page.
 
