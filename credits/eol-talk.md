@@ -1,7 +1,7 @@
 # Credits
 
-- endoflife.date contributors and team listed at https://endoflife.date/humans.txt
-- Presentation template by Slidesgo.
+- endoflife.date contributors and team listed at <https://endoflife.date/humans.txt>.
+- Presentation template by [Slidesgo](https://slidesgo.com/theme/aqua-marketing-plan).
 - Screenshots from various product pages including:
 	- <https://www.php.net/supported-versions.php>
 	- <https://kubernetes.io/releases/patch-releases/>
