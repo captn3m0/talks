@@ -54,7 +54,7 @@ Various talks & Lectures that I have given
 24. [Sanskari Proxy](sanskari-proxy.pdf) - Talk about the
     [Sanskari Proxy Project](https://github.com/captn3m0/sanskari-proxy) - A
     project to help researchers outside India access Indian Government websites.
-25. [endoflife.date recommendations](https://speakerdeck.com/captn3m0/endoflife-dot-date-recommendations) - Presentation on endoflife.date documentation recommendations I wrote down [here](https://endoflife.date/recommendations). Presented at the [FOSS United Meetup in Bangalore](https://forum.fossunited.org/t/june-2022-foss-meetup/1070/4), June 2022. [[Credits](/credits/eol-talk)], [[PDF Version](/talks/eol-recommendations.pdf)], [[Slides with Speaker Notes](https://docs.google.com/presentation/d/10qpSY3CYK83omwoGsbPz1VzCgVCG2e6_XPiN24BqxtM)].
+25. [endoflife.date recommendations](https://speakerdeck.com/captn3m0/endoflife-dot-date-recommendations) - Presentation on endoflife.date documentation recommendations I wrote down [here](https://endoflife.date/recommendations). Presented at the [FOSS United Meetup in Bangalore](https://forum.fossunited.org/t/june-2022-foss-meetup/1070/4), June 2022. [[Credits](/talks/credits/eol-talk.html)], [[PDF Version](/talks/eol-recommendations.pdf)], [[Slides with Speaker Notes](https://docs.google.com/presentation/d/10qpSY3CYK83omwoGsbPz1VzCgVCG2e6_XPiN24BqxtM)].
 
 A few more talks that I've done are on my
 [SpeakerDeck account](https://speakerdeck.com/captn3m0) and my
