@@ -1,5 +1,7 @@
 Various talks & Lectures that I have given
 
+# Ongoing: [FOSS United Workshop - My Computer My Data My Code](https://slides.com/captn3m0/data-liberation/). Notes: https://hackmd.io/@captn3m0/SknVQFN2a
+
 1.  ux - UX & Usability Designing
     ([SpeakerDeck](https://speakerdeck.com/u/captn3m0/p/ux-and-usability-designing)
     [Online](https://captnemo.in/talks/ux/ "Made via Reveal.js"))
