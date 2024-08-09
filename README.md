@@ -1,7 +1,5 @@
 Various talks & Lectures that I have given
 
-# Ongoing: [FOSS United Workshop - My Computer My Data My Code](https://slides.com/captn3m0/data-liberation/). Notes: https://hackmd.io/@captn3m0/SknVQFN2a
-
 1.  ux - UX & Usability Designing
     ([SpeakerDeck](https://speakerdeck.com/u/captn3m0/p/ux-and-usability-designing)
     [Online](https://captnemo.in/talks/ux/ "Made via Reveal.js"))
@@ -58,6 +56,8 @@ Various talks & Lectures that I have given
     project to help researchers outside India access Indian Government websites.
 25. [endoflife.date recommendations](https://speakerdeck.com/captn3m0/endoflife-dot-date-recommendations) - Presentation on endoflife.date documentation recommendations I wrote down [here](https://endoflife.date/recommendations). Presented at the [FOSS United Meetup in Bangalore](https://forum.fossunited.org/t/june-2022-foss-meetup/1070/4), June 2022. [[Credits](/talks/credits/eol-talk.html)], [[PDF Version](/talks/eol-recommendations.pdf)], [[Slides with Speaker Notes](https://docs.google.com/presentation/d/10qpSY3CYK83omwoGsbPz1VzCgVCG2e6_XPiN24BqxtM)].
 26. [How do we get a FOSS UPI mobile app](https://docs.google.com/presentation/d/1cRZjDAMK_ihQ4RK3Rd3lwjdsFqN3-vM1OOJ2N7_FTaM/ "Slides with speaker notes") - Talk at IndiaFOSS 2.0 about the need for a FOSS UPI App, and a roadmap for the same. I launched the [librefin.in](https://librefin.in) project alongside. July 2022.
+27. [FOSS United Workshop - My Computer My Data My Code](https://slides.com/captn3m0/data-liberation/). [Notes](https://hackmd.io/@captn3m0/SknVQFN2a). [Video](https://www.youtube.com/watch?v=Mf0pbWlr8C0).
+28. [Ideas are Worthless - Blog Post](https://captnemo.in/talks/ideas-are-worthless/). [[SpeakerDeck]](https://speakerdeck.com/captn3m0/ideas-are-worthless) [[Audio Recording]](/talks/ideas-are-worthless.m4a) [[PDF]](/talks/ideas-are-worthless.pdf) [[Slides with Speaker Notes]](https://docs.google.com/presentation/d/1InVvuZ3EiMiQJEURydvELx9qr34OflGlsLlh8R4x_ag/edit?usp=sharing)
 
 A few more talks that I've done are on my
 [SpeakerDeck account](https://speakerdeck.com/captn3m0) and my
