@@ -59,14 +59,14 @@ Various talks & Lectures that I have given
 27. [FOSS United Workshop - My Computer My Data My Code](https://slides.com/captn3m0/data-liberation/). [Notes](https://hackmd.io/@captn3m0/SknVQFN2a). [Video](https://www.youtube.com/watch?v=Mf0pbWlr8C0).
 28. [Ideas are Worthless - Blog Post](https://captnemo.in/talks/ideas-are-worthless/). [[SpeakerDeck]](https://speakerdeck.com/captn3m0/ideas-are-worthless) [[Audio Recording]](/talks/ideas-are-worthless.m4a) [[PDF]](/talks/ideas-are-worthless.pdf) [[Slides with Speaker Notes]](https://docs.google.com/presentation/d/1InVvuZ3EiMiQJEURydvELx9qr34OflGlsLlh8R4x_ag/edit?usp=sharing)
 
+29. [Stop Chasing CVEs](https://docs.google.com/presentation/d/1SbRaLtJc8kNDQ0TW3I-1DukqkfkTXTtth3y5YLlw6SA/edit?usp=sharing). [[SpeakerDeck]](https://speakerdeck.com/captn3m0/stop-chasing-cves) [[PDF]](/talks/stop-chasing-cves.pdf). Speaker Notes + Blog Post + Recording might come later.
+
 A few more talks that I've done are on my
 [SpeakerDeck account](https://speakerdeck.com/captn3m0) and my
 [slides.com](https://slides.com/captn3m0/) profile page.
 
 Source for most of these is available on the
 [captn3m0/talks](https://github.com/captn3m0/talks) repository. If you have any
-questions regarding any of the talks, feel free to reach out at
-<talks@captnemo.in>.
+questions regarding any of the talks, feel free to reach out at <https://captnemo.in/contact/>
 
 Go back to [my website](https://captnemo.in)
-
