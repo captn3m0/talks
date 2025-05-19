@@ -61,6 +61,8 @@ Various talks & Lectures that I have given
 
 29. [Stop Chasing CVEs](https://docs.google.com/presentation/d/1SbRaLtJc8kNDQ0TW3I-1DukqkfkTXTtth3y5YLlw6SA/edit?usp=sharing). [[SpeakerDeck]](https://speakerdeck.com/captn3m0/stop-chasing-cves) [[PDF]](/talks/stop-chasing-cves.pdf). Speaker Notes + Blog Post + Recording might come later.
 
+30. [Around the Supply Chain in 80 slides](https://speakerdeck.com/captn3m0/around-the-supply-chain-in-80-slides) [[PDF Download]](https://captnemo.in/talks/2025/around-scs-nemo.pdf) [[With Speaker Notes]](https://captnemo.in/talks/2025/around-scs-nemo-with-notes.pdf). Opening talk at Rootconf 2025's Software Supply Chain Security track. This talk was recorded. 
+
 A few more talks that I've done are on my
 [SpeakerDeck account](https://speakerdeck.com/captn3m0) and my
 [slides.com](https://slides.com/captn3m0/) profile page.
