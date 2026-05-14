@@ -61,7 +61,13 @@ Various talks & Lectures that I have given
 
 29. [Stop Chasing CVEs](https://docs.google.com/presentation/d/1SbRaLtJc8kNDQ0TW3I-1DukqkfkTXTtth3y5YLlw6SA/edit?usp=sharing). [[SpeakerDeck]](https://speakerdeck.com/captn3m0/stop-chasing-cves) [[PDF]](/talks/stop-chasing-cves.pdf). Speaker Notes + Blog Post + Recording might come later.
 
+29. [Why I didn't sell endoflife.date](https://docs.google.com/presentation/d/12GhVaR-cVgJymLyopKd68FqJWjU22kjE5iY8oCJ75TQ/edit?usp=sharing) at PuneFOSS 3.0, April 2025. This talk was recorded. It was a last minute talk, so most of the content is from the earlier Recommendations talk above. I talked about why building FOSS _the right way_ is important to me, and attempt to inspire everyone to build more things.
+
 30. [Around the Supply Chain in 80 slides](https://speakerdeck.com/captn3m0/around-the-supply-chain-in-80-slides) [[PDF Download]](https://captnemo.in/talks/2025/around-scs-nemo.pdf) [[With Speaker Notes]](https://captnemo.in/talks/2025/around-scs-nemo-with-notes.pdf). Opening talk at Rootconf 2025's Software Supply Chain Security track. This talk was recorded. 
+
+31. [endoflife.date - An Obsolescence tracking Wiki](https://docs.google.com/presentation/d/1VuR1kKixY-PbTCrUcXJ_aZyQKxB2JviQ/edit?usp=sharing&ouid=116290713924645527187&rtpof=true&sd=true), talk at the International Institute of Obsolescence Management. Paris, Oct 2025.
+
+32. [Stop Chasing CVEs](https://docs.google.com/presentation/d/1dWT54B5aB2CfIMLEmS_4ltS6kxlVFHlhGyPV8EpBpZ0/edit?usp=sharing). I gave the talk from earlier again at the OWASP Berlin meetup in Feb 2026. This time with some updated guidance around supply chain attacks.
 
 A few more talks that I've done are on my
 [SpeakerDeck account](https://speakerdeck.com/captn3m0) and my
