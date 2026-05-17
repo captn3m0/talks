@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Nemo | May 17th 02026" />
+  <title>A world without EOLs?</title>
+  <style type="text/css">
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <link href="data:text/css,%40media%20screen%2C%20projection%20%7Bbody%20%7Bbackground%2Dcolor%3A%20%23e3eee7%3Bpadding%3A%200%3Bmargin%3A%200%3Bcolor%3A%20%23132%3B%20border%2Dcolor%3A%20%23678%3B%20font%2Dsize%3A%20125%25%3B%7D%23statusbar%20%7Bdisplay%3A%20none%3Bposition%3A%20absolute%3B%20z%2Dindex%3A%2010%3Btop%3A%20auto%3B%20bottom%3A%200%3B%20left%3A%200%3B%20right%3A%200%3Bheight%3A%202em%3Bbackground%2Dcolor%3A%20%23f0fff8%3Bcolor%3A%20%23132%3Bfont%2Dsize%3A%2075%25%3Bpadding%3A%200%2E5em%200%2E5em%200%202px%3Bborder%2Dtop%3A%20solid%201px%20%23000%3B%7D%23statusbar%20button%2C%20%23tocbox%20%7Bcursor%3A%20pointer%3B%20color%3A%20%23031%3Bbackground%2Dcolor%3A%20%23e0eee7%3Bmargin%3A%201px%3Bpadding%3A%200%200%2E5em%3Bborder%3A%20inset%201px%20black%3B%7D%23statusbar%20button%3Ahover%2C%20%23tocbox%3Ahover%20%7Bcolor%3A%20%23031%3Bbackground%2Dcolor%3A%20%23c0ccc6%3Bborder%3A%20outset%201px%20black%3B%7D%23tocbox%20%7Bwidth%3A%2015em%3B%7D%23eos%20%7Bvisibility%3A%20hidden%3Bcolor%3A%20%23021%3Bbackground%2Dcolor%3A%20%23fffafa%3Bborder%3A%20inset%201px%20black%3Bfont%2Dsize%3A%20120%25%3B%7Ddiv%2Eslide%20%7Bdisplay%3A%20block%3Bmargin%3A%200%200%202em%200%3Bpadding%3A%200%20150px%3B%7Ddiv%2Eslide%20h1%20%7Bbackground%3A%20%23a0aaa4%3Bcolor%3A%20%23f0fff8%3Bpadding%3A%200%200%2E5em%200%200%2E5em%3Bmargin%3A%200%20%2D150px%3Bfont%2Dsize%3A%20120%25%3Bborder%2Dbottom%3A%20solid%201px%20black%3B%7Ddiv%2Eslide%20h1%3Abefore%20%7B%20content%3A%20%22%23%20%22%3B%20%7Ddiv%2Ehandout%20%7B%20display%3A%20block%3B%20%7Dbody%3E%23statusbar%20%7B%20position%3A%20fixed%3B%20%7D%20%2A%20html%20body%20%7Boverflow%3A%20hidden%3B%7D%2A%20html%20div%2Eslide%20%7Bheight%3A%20100%25%3Bpadding%2Dbottom%3A%202em%3Boverflow%3A%20auto%3B%7D%20%7D%20%40media%20print%20%7Bbody%20%7Bcolor%3A%20black%3Bfont%2Dfamily%3A%20sans%2Dserif%3Bfont%2Dsize%3A%2011pt%3B%7D%23statusbar%20%7B%20display%3A%20none%3B%20%7Ddiv%2Eslide%20%7B%20page%2Dbreak%2Dafter%3A%20always%3B%20%7Ddiv%2Ehandout%20%7B%20display%3A%20block%3B%20%7D%7D%20" rel="stylesheet" type="text/css" media="screen, projection, print" />
+  <script type="text/javascript">/*	This work is licensed under Creative Commons GNU LGPL License.
+
+	License: http://creativecommons.org/licenses/LGPL/2.1/
+
+	Author:  Stefan Goessner/2005-2006
+	Web:     http://goessner.net/ 
+*/
+var Slideous = {
+   version: 1.0,
+   // == user customisable ===
+   clickables: { a: true, button: true, img: true, input: true, object: true, textarea: true, select: true, option: true },
+   incrementables: { blockquote: { filter: "self, parent" }, 
+                     dd: { filter: "self, parent" },
+                     dt: { filter: "self, parent" },
+                     h2: { filter: "self, parent" },
+                     h3: { filter: "self, parent" },
+                     h4: { filter: "self, parent" },
+                     h5: { filter: "self, parent" },
+                     h6: { filter: "self, parent" },
+                     li: { filter: "self, parent" },
+                     p: { filter: "self" }, 
+                     pre: { filter: "self" }, 
+                     img: { filter: "self, parent" }, 
+                     object: { filter: "self, parent" },
+                     table: { filter: "self, parent" },
+                     td: { filter: "self, parent" },
+                     th: { filter: "self, parent" },
+                     tr: { filter: "parent, grandparent" }
+                   },
+   autoincrementables: { ol: true, ul: true, dl: true },
+   autoincrement: false,
+   statusbar: true,
+   navbuttons: { incfontbutton:   function(){Slideous.changefontsize(+Slideous.fontdelta);},
+                 decfontbutton:   function(){Slideous.changefontsize(-Slideous.fontdelta);},
+                 contentbutton:   function(){Slideous.gotoslide(Slideous.tocidx(), true, true);},
+                 homebutton:      function(){Slideous.gotoslide(1, true, true);},
+                 prevslidebutton: function(){Slideous.previous(false);},
+                 previtembutton:  function(){Slideous.previous(true);},
+                 nextitembutton:  function(){Slideous.next(true);},
+                 nextslidebutton: function(){Slideous.next(false);},
+                 endbutton:       function(){Slideous.gotoslide(Slideous.count,true,true);} },
+   fontsize: 125,  // in percent, corresponding to body.font-size in css file
+   fontdelta: 5,   // increase/decrease fontsize by this value
+   mousesensitive: true,
+   tocidx: 0,
+   tocitems: { toc: "<li><a href=\"#s{\$slideidx}\">{\$slidetitle}</a></li>",
+               tocbox: "<option value=\"#s{\$slideidx}\" title=\"{\$slidetitle}\">{\$slidetitle}</option>" },
+   keydown: function(evt) {
+      evt = evt || window.event;
+      var key = evt.keyCode || evt.which;
+      if (key && !evt.ctrlKey && !evt.altKey) {
+         switch (key) {
+            case 33: // page up  ... previous slide
+               Slideous.previous(false); evt.cancel = !Slideous.showall; break;
+            case 37: // left arrow ... previous item
+               Slideous.previous(true); evt.cancel = !Slideous.showall; break;
+            case 32: // space bar
+            case 39: // right arrow
+               Slideous.next(true); evt.cancel = !Slideous.showall; break;
+            case 13: // carriage return  ... next slide
+            case 34: // page down
+               Slideous.next(false); evt.cancel = !Slideous.showall; break;
+            case 35: // end  ... last slide (not recognised by opera)
+               Slideous.gotoslide(Slideous.count, true, true); evt.cancel = !Slideous.showall; break;
+            case 36: // home ... first slide (not recognised by opera)
+               Slideous.gotoslide(1, true, true); evt.cancel = !Slideous.showall; break;
+            case 65: // A ... show All
+            case 80: // P ... Print mode
+               Slideous.toggleshowall(!Slideous.showall); evt.cancel = true; break;
+            case 67: // C ... goto contents
+               Slideous.gotoslide(Slideous.tocidx, true, true); evt.cancel = true; break;
+            case 77: // M ... toggle mouse sensitivity
+               Slideous.mousenavigation(Slideous.mousesensitive = !Slideous.mousesensitive); evt.cancel = true; break;
+            case 83: // S ... toggle statusbar
+               Slideous.togglestatusbar(); evt.cancel = true; break;
+            case 61:  // + ... increase fontsize
+            case 107:
+               Slideous.changefontsize(+Slideous.fontdelta); evt.cancel = true; break;
+            case 109:  // - ... decrease fontsize
+               Slideous.changefontsize(-Slideous.fontdelta); evt.cancel = true; break;
+            default: break;
+         }
+         if (evt.cancel) evt.returnValue = false;
+      }
+      return !evt.cancel;
+   },
+
+   // == program logic ===
+   count: 0,                       // # of slides ..
+   curidx: 0,                      // current slide index ..
+   mousedownpos: null,             // last mouse down position ..
+   contentselected: false,         // indicates content selection ..
+   showall: true,
+   init: function() {
+      Slideous.curidx = 1;
+      Slideous.importproperties();
+      Slideous.registerslides();
+      document.body.innerHTML = Slideous.injectproperties(document.body.innerHTML);
+      Slideous.buildtocs();
+      Slideous.registeranchors();
+      Slideous.toggleshowall(false);
+      Slideous.updatestatus();
+      document.body.style.fontSize = Slideous.fontsize+"%";
+      document.getElementById("s1").style.display = "block";
+      document.onkeydown = Slideous.keydown;
+      Slideous.mousenavigation(Slideous.mousesensitive);
+      Slideous.registerbuttons();
+      if (window.location.hash)
+         Slideous.gotoslide(window.location.hash.substr(2), true, true);
+   },
+   registerslides: function() {
+      var div = document.getElementsByTagName("div");
+      Slideous.count = 0;
+      for (var i in div)
+         if (Slideous.hasclass(div[i], "slide"))
+            div[i].setAttribute("id", "s"+(++Slideous.count));
+   },
+   registeranchors: function() {
+      var a = document.getElementsByTagName("a"),
+          loc = (window.location.hostname+window.location.pathname).replace(/\\/g, "/");
+      for (var i in a) {
+         if (a[i].href && a[i].href.indexOf(loc) >= 0 && a[i].href.lastIndexOf("#") >= 0) {
+            a[i].href = "javascript:Slideous.gotoslide(" + a[i].href.substr(a[i].href.lastIndexOf("#")+2)+",true,true)";
+         }
+      }
+   },
+   registerbuttons: function() {
+      var button;
+      for (var b in Slideous.navbuttons)
+         if (button = document.getElementById(b))
+            button.onclick = Slideous.navbuttons[b];
+   },
+   importproperties: function() {  // from html meta section ..
+      var meta = document.getElementsByTagName("meta"), elem;
+      for (var i in meta)
+         if (meta[i].attributes && meta[i].attributes["name"] && meta[i].attributes["name"].value in Slideous)
+            switch (typeof(Slideous[meta[i].attributes["name"].value])) {
+               case "number": Slideous[meta[i].attributes["name"].value] = parseInt(meta[i].attributes["content"].value); break;
+               case "boolean": Slideous[meta[i].attributes["name"].value] = meta[i].attributes["content"].value == "true" ? true : false; break;
+               default: Slideous[meta[i].attributes["name"].value] = meta[i].attributes["content"].value; break;
+            }
+   },
+   injectproperties: function(str) {
+      var meta = document.getElementsByTagName("meta"), elem;
+      for (var i in meta) {
+         if (meta[i].attributes && meta[i].attributes["name"])
+            str = str.replace(new RegExp("{\\$"+meta[i].attributes["name"].value+"}","g"), meta[i].attributes["content"].value);
+      }
+      return str = str.replace(/{\$generator}/g, "Slideous")
+                      .replace(/{\$version}/g, Slideous.version)
+                      .replace(/{\$title}/g, document.title)
+                      .replace(/{\$slidecount}/g, Slideous.count);
+   },
+   buildtocs: function() {
+      var toc = document.getElementById("toc"), list = "",
+          tocbox = document.getElementById("tocbox");
+      if (toc) {
+         for (var i=0; i<Slideous.count; i++)
+            list += Slideous.tocitems.toc.replace(/{\$slideidx}/g, i+1).replace(/{\$slidetitle}/, document.getElementById("s"+(i+1)).getElementsByTagName("h1")[0].innerHTML);
+         toc.innerHTML = list;
+         while (toc && !Slideous.hasclass(toc, "slide")) toc = toc.parentNode;
+         if (toc) Slideous.tocidx = toc.getAttribute("id").substr(1);
+      }
+      if (tocbox) {
+         tocbox.innerHTML = "";
+         for (var i=0; i<Slideous.count; i++)
+            tocbox.options[tocbox.length] = new Option((i+1)+". "+document.getElementById("s"+(i+1)).getElementsByTagName("h1")[0].innerHTML, "#s"+(i+1));
+         tocbox.onchange = function() { Slideous.gotoslide(this.selectedIndex+1, true, true); };
+      }
+   },
+   next: function(deep) {
+      if (!Slideous.showall) {
+         var slide = document.getElementById("s"+Slideous.curidx),
+             item = Slideous.firstitem(slide, Slideous.isitemhidden);
+         if (deep) {  // next item
+            if (item)
+               Slideous.displayitem(item, true);
+            else
+               Slideous.gotoslide(Slideous.curidx+1, false, false);
+         }
+         else if (item)  // complete slide ..
+            while (item = Slideous.firstitem(slide, Slideous.isitemhidden))
+               Slideous.displayitem(item, true);
+         else           // next slide
+            Slideous.gotoslide(Slideous.curidx+1, true, false);
+         Slideous.updatestatus();
+      }
+   },
+   previous: function(deep) {
+      if (!Slideous.showall) {
+         var slide = document.getElementById("s"+Slideous.curidx);
+         if (deep) {
+            var item = Slideous.lastitem(slide, Slideous.isitemvisible);
+            if (item)
+               Slideous.displayitem(item, false);
+            else
+               Slideous.gotoslide(Slideous.curidx-1, true, false);
+         }
+         else
+            Slideous.gotoslide(Slideous.curidx-1, true, false);
+         Slideous.updatestatus();
+      }
+   },
+   gotoslide: function(i, showitems, updatestatus) {
+      if (!Slideous.showall && i > 0 && i <= Slideous.count && i != Slideous.curidx) {
+         document.getElementById("s"+Slideous.curidx).style.display = "none";
+         var slide = document.getElementById("s"+(Slideous.curidx=i)), item;
+         while (item = Slideous.firstitem(slide, showitems ? Slideous.isitemhidden : Slideous.isitemvisible))
+            Slideous.displayitem(item, showitems);
+         slide.style.display = "block";
+         if (updatestatus)
+            Slideous.updatestatus();
+      }
+   },
+   firstitem: function(root, filter) {
+      var found = filter(root);
+      for (var node=root.firstChild; node!=null && !found; node = node.nextSibling)
+         found = Slideous.firstitem(node, filter);
+      return found;
+   },
+   lastitem: function(root, filter) {
+      var found = null;
+      for (var node=root.lastChild; node!=null && !found; node = node.previousSibling)
+         found = Slideous.lastitem(node, filter);
+      return found || filter(root);
+   },
+   isitem: function(node, visible) {
+      var nodename;
+      return node && node.nodeType == 1   // elements only ..
+          && (nodename=node.nodeName.toLowerCase()) in Slideous.incrementables
+          && (   Slideous.incrementables[nodename].filter.match("\\bself\\b") && (Slideous.hasclass(node, "incremental") || (Slideous.autoincrement && nodename in Slideous.autoincrementables))
+              || Slideous.incrementables[nodename].filter.match("\\bparent\\b") && (Slideous.hasclass(node.parentNode, "incremental") || (Slideous.autoincrement && node.parentNode.nodeName.toLowerCase() in Slideous.autoincrementables))
+              || Slideous.incrementables[nodename].filter.match("\\bgrandparent\\b") && (Slideous.hasclass(node.parentNode.parentNode, "incremental") || (Slideous.autoincrement && node.parentNode.parentNode.nodeName.toLowerCase() in Slideous.autoincrementables))
+             )
+          && (visible ? (node.style.visibility != "hidden")
+                      : (node.style.visibility == "hidden"))
+          ? node : null;
+   },
+   isitemvisible: function(node) { return Slideous.isitem(node, true); },
+   isitemhidden: function(node) { return Slideous.isitem(node, false); },
+   displayitem: function(item, show) {
+      if (item) item.style.visibility = (show ? "visible" : "hidden");
+   },
+   updatestatus: function() {
+      if (Slideous.statusbar) {
+         var eos = document.getElementById("eos"), 
+             idx = document.getElementById("slideidx"),
+             tocbox = document.getElementById("tocbox");
+         if (eos) 
+            eos.style.visibility = Slideous.firstitem(document.getElementById("s"+Slideous.curidx), Slideous.isitemhidden) != null
+                                 ? "visible" : "hidden";
+         if (idx) 
+            idx.innerHTML = Slideous.curidx;
+         if (tocbox)
+            tocbox.selectedIndex = Slideous.curidx-1;
+      }
+   },
+   changefontsize: function(delta) {
+      document.body.style.fontSize = (Slideous.fontsize+=delta)+"%";
+   },
+   togglestatusbar: function() {
+      document.getElementById("statusbar").style.display = (Slideous.statusbar = !Slideous.statusbar) ? "block" : "none";
+   },
+   toggleshowall: function(showall) {
+      var slide, item;
+      for (var i=0; i<Slideous.count; i++) {
+         slide = document.getElementById("s"+(i+1));
+         slide.style.display = showall ? "block" : "none";
+         while (item = Slideous.firstitem(slide, showall ? Slideous.isitemhidden : Slideous.isitemvisible)) 
+            Slideous.displayitem(item, showall);
+         var divs = slide.getElementsByTagName("div");
+         for (var j in divs)
+            if (Slideous.hasclass(divs[j], "handout"))
+               divs[j].style.display = showall ? "block" : "none";
+      }
+      if (!showall)
+         document.getElementById("s"+Slideous.curidx).style.display = "block";
+      if (Slideous.statusbar) 
+         document.getElementById("statusbar").style.display = showall ? "none" : "block";
+      Slideous.showall = showall;
+   },
+   hasclass: function(elem, classname) {
+      var classattr = null;
+      return (classattr=(elem.attributes && elem.attributes["class"])) 
+          && classattr.nodeValue.match("\\b"+classname+"\\b");
+   },
+   selectedcontent: function() {
+      return window.getSelection ? window.getSelection().toString() 
+                                 : document.getSelection ? document.getSelection() 
+                                                         : document.selection ? document.selection.createRange().text
+                                                                              : "";
+   },
+   mousenavigation: function(on) {
+      if (on) {
+         document.onmousedown = Slideous.mousedown;
+         document.onmouseup = Slideous.mouseup;
+      }
+      else
+         document.onmousedown = document.onmouseup = null;
+   },
+   mousepos: function(e) {
+      return e.pageX ? {x: e.pageX, y: e.pageY} 
+                     : {x: e.x+document.body.scrollLeft, y: e.y+document.body.scrollTop};
+   },
+   mousedown: function(evt) {
+      evt = evt||window.event;
+      Slideous.mousedownpos = Slideous.mousepos(evt);
+      Slideous.contentselected = !!Slideous.selectedcontent() || ((evt.target || evt.srcElement).nodeName.toLowerCase() in Slideous.clickables);
+      return true;
+   },
+   mouseup: function(evt) {
+      evt = evt||window.event;
+      var pos = Slideous.mousepos(evt);
+      if (pos.x == Slideous.mousedownpos.x && pos.y == Slideous.mousedownpos.y && !Slideous.contentselected) {
+         Slideous.next(true);
+         return evt.returnValue = !(evt.cancel = true);
+      }
+      return false;
+   }
+};
+window.onload = Slideous.init;
+</script>
+</head>
+<body>
+<div id="statusbar">
+<span style="float:right;">
+<span style="margin-right:4em;font-weight:bold;"><span id="slideidx"></span> of {$slidecount}</span>
+<button id="homebutton" title="first slide">1</button>
+<button id="prevslidebutton" title="previous slide">«</button>
+<button id="previtembutton" title="previous item">‹</button>
+<button id="nextitembutton" title="next item">›</button>
+<button id="nextslidebutton" title="next slide">»</button>
+<button id="endbutton" title="last slide">{$slidecount}</button>
+<button id="incfontbutton" title="content">A+</button>
+<button id="decfontbutton" title="first slide">A-</button>
+<select id="tocbox" size="1"><option></option></select>
+</span>
+<span id="eos">½</span>
+<span title="{$location}, {$date}">{$title}, {$author}</span>
+</div>
+<div class="slide titlepage">
+  <h1 class="title">A world without EOLs?</h1>
+  <p class="author">
+Nemo | May 17th 02026
+  </p>
+  <p class="date">Berlin Permacomputing Meet-Up</p>
+</div>
+<div id="about-me" class="slide section level1">
+<h1>About Me</h1>
+<ul>
+<li>Nemo</li>
+<li>https://captnemo.in/contact/</li>
+<li>nemo@endoflife.date</li>
+<li>Fintech, Security, Open-Source, Public Policy, Hacktivist</li>
+</ul>
+</div>
+<div id="agenda" class="slide section level1">
+<h1>Agenda</h1>
+<ol style="list-style-type: decimal">
+<li>About endoflife.date</li>
+<li>Learnings &amp; Insights</li>
+<li>Why do we have EOLs?</li>
+<li>(Bonus) Why does hardware expire?</li>
+</ol>
+</div>
+<div id="demo" class="slide section level1">
+<h1>Demo</h1>
+<ol style="list-style-type: decimal">
+<li>Homepage, Product Page</li>
+<li>Description, Policy Text</li>
+<li>Current Version, Table</li>
+<li>Product Identifiers, API</li>
+<li>Wiki, WebCAL, RSS</li>
+</ol>
+</div>
+<div id="endoflife.date-is-a" class="slide section level1">
+<h1>endoflife.date is a</h1>
+<p><strong>Semantic</strong> / <strong>community-moderated</strong> /
+<strong>wiki</strong> that tracks <strong>Lifecycle</strong> of
+<strong>Notable Products</strong></p>
+</div>
+<div id="some-numbers" class="slide section level1">
+<h1>Some Numbers</h1>
+<ul>
+<li>450+ products</li>
+<li>20M Web Impressions</li>
+<li>200K Web Visits</li>
+<li>1000s of companies</li>
+<li>1000+ product updates.</li>
+<li>2+TB/month API Bandwidth</li>
+</ul>
+</div>
+<div id="learnings" class="slide section level1">
+<h1>Learnings</h1>
+</div>
+<div id="everyone-cares-about-this" class="slide section level1">
+<h1><em>everyone</em> cares about this</h1>
+<p>Devices &gt; Operating Systems &gt; Everything else</p>
+</div>
+<div id="support-supported" class="slide section level1">
+<h1>Support != Supported</h1>
+<p>People care about:</p>
+<ol style="list-style-type: decimal">
+<li>Security Updates</li>
+<li>Bug Fixes</li>
+<li>New Features</li>
+</ol>
+</div>
+<div id="inventories-are-great" class="slide section level1">
+<h1>Inventories are great</h1>
+<ol style="list-style-type: decimal">
+<li>Software Bill of Materials (SBOM)</li>
+<li>Package URL (PURL)</li>
+</ol>
+</div>
+<div id="cves-are-a-lagging-indicator" class="slide section level1">
+<h1>CVEs are a lagging indicator</h1>
+<ul>
+<li>Is this supported?</li>
+<li>Can I upgrade?</li>
+</ul>
+<p>is a better/proactive way to think about patching.</p>
+</div>
+<div id="chip-obsolescence" class="slide section level1">
+<h1>Chip Obsolescence</h1>
+<p>International Institute of Obsolescence Management…</p>
+</div>
+<div id="part-3-a-world-without-eols" class="slide section level1">
+<h1>Part 3: A world without EOLs?</h1>
+<p>Why can’t we build software without expiry?</p>
+<p>What’s your threshold for running:</p>
+<ol style="list-style-type: decimal">
+<li>Insecure Software</li>
+<li>Unmaintained Software</li>
+<li>Broken Software</li>
+</ol>
+</div>
+<div id="can-you-avoid-breaking-software-with-spacetime" class="slide section level1">
+<h1>Can you avoid breaking software <em>with spacetime</em>?</h1>
+<p>Only sofware with no bugs is the one with no code.</p>
+<p>Every interface boundary is a time-bomb.</p>
+</div>
+<div id="examples-secureboot" class="slide section level1">
+<h1>Examples: SecureBoot</h1>
+<p>Some Windows devices still use Secure Boot certificates issued in
+2011, which will expire in June 2026.</p>
+</div>
+<div id="examples-tls-upgrade" class="slide section level1">
+<h1>Examples: TLS Upgrade</h1>
+<p>Your code works fine with TLS-1.0, but the servers can decide to not
+use it anymore</p>
+</div>
+<div id="examples-heartbleed-log4shell-reactshell" class="slide section level1">
+<h1>Examples: Heartbleed, Log4Shell, ReactShell</h1>
+<p>Your software breaks so badly that you have to fix it.</p>
+</div>
+<div id="examples-leap-second-2038-y2k-tzdata" class="slide section level1">
+<h1>Examples: Leap Second, 2038, Y2K, tzdata</h1>
+<p>Time is a tricky interface.</p>
+</div>
+<div id="examples-3g2gcdma-networks" class="slide section level1">
+<h1>Examples: 3G/2G/CDMA Networks</h1>
+<p>More G is obviously better.</p>
+</div>
+<div id="examples-commercial-changes" class="slide section level1">
+<h1>Examples: Commercial Changes</h1>
+<ul>
+<li>VMWare Licensing Changes</li>
+<li>Google Maps Commercial API Changes</li>
+<li>Twitter Third-Party client terms.</li>
+</ul>
+</div>
+<div id="examples-things-go-away" class="slide section level1">
+<h1>Examples: Things go away</h1>
+<ul>
+<li>NPAPI</li>
+<li>Manifest V2</li>
+</ul>
+</div>
+<div id="how-to-build-permanent-software" class="slide section level1">
+<h1>How to build permanent software</h1>
+<ol style="list-style-type: decimal">
+<li>Reinvent the universe.</li>
+<li>Maintain the universe.</li>
+<li>Shrink the universe.</li>
+<li></li>
+<li><del>Profit</del></li>
+</ol>
+</div>
+<div id="more-practically" class="slide section level1">
+<h1>More practically:</h1>
+<p>If I wanted my software to run in hundred years:</p>
+<ul>
+<li>Distribute complete VMs, and ensure your build tooling is
+included.</li>
+<li>Local-first <em>across-the-stack</em></li>
+<li>Target Win32-PE/x86_64 if you can.</li>
+</ul>
+</div>
+<div id="why-does-hardware-expire" class="slide section level1">
+<h1>Why does hardware expire?</h1>
+<p>(Pixel 3 story)</p>
+</div>
+<div id="closing-thought" class="slide section level1">
+<h1>Closing thought</h1>
+<p>Permaculture takes free labor from the nature. Computing doesn’t get
+this free-pass.</p>
+</div>
+</body>
+</html>

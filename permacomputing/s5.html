@@ -1,0 +1,767 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="version" content="S5 1.1" />
+  <meta name="author" content="Nemo | May 17th 02026" />
+  <title>A world without EOLs?</title>
+  <style type="text/css">
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <!-- configuration parameters -->
+  <meta name="defaultView" content="slideshow" />
+  <meta name="controlVis" content="hidden" />
+  <!-- style sheet links -->
+  <link href="data:text/css,%0Adiv%23header%2C%20div%23footer%2C%20div%23controls%2C%20%2Eslide%20%7Bposition%3A%20absolute%3B%7D%0Ahtml%3Ebody%20div%23header%2C%20html%3Ebody%20div%23footer%2C%20html%3Ebody%20div%23controls%2C%20html%3Ebody%20%2Eslide%20%7Bposition%3A%20fixed%3B%7D%0A%2Ehandout%20%7Bdisplay%3A%20none%3B%7D%0A%2Elayout%20%7Bdisplay%3A%20block%3B%7D%0A%2Eslide%2C%20%2Ehideme%2C%20%2Eincremental%20%7Bvisibility%3A%20hidden%3B%7D%0A%23slide0%20%7Bvisibility%3A%20visible%3B%7D%0A%0A%0Adiv%23header%2C%20div%23footer%2C%20%2Eslide%20%7Bwidth%3A%20100%25%3B%20top%3A%200%3B%20left%3A%200%3B%7D%0Adiv%23header%20%7Btop%3A%200%3B%20height%3A%203em%3B%20z%2Dindex%3A%201%3B%7D%0Adiv%23footer%20%7Btop%3A%20auto%3B%20bottom%3A%200%3B%20height%3A%202%2E5em%3B%20z%2Dindex%3A%205%3B%7D%0A%2Eslide%20%7Btop%3A%200%3B%20width%3A%2092%25%3B%20padding%3A%203%2E5em%204%25%204%25%3B%20z%2Dindex%3A%202%3B%20list%2Dstyle%3A%20none%3B%7D%0Adiv%23controls%20%7Bleft%3A%2050%25%3B%20bottom%3A%200%3B%20width%3A%2050%25%3B%20z%2Dindex%3A%20100%3B%7D%0Adiv%23controls%20form%20%7Bposition%3A%20absolute%3B%20bottom%3A%200%3B%20right%3A%200%3B%20width%3A%20100%25%3B%0Amargin%3A%200%3B%7D%0A%23currentSlide%20%7Bposition%3A%20absolute%3B%20width%3A%2010%25%3B%20left%3A%2045%25%3B%20bottom%3A%201em%3B%20z%2Dindex%3A%2010%3B%7D%0Ahtml%3Ebody%20%23currentSlide%20%7Bposition%3A%20fixed%3B%7D%0A%0A%0Abody%20%7B%0Acolor%3A%20%232a1f3d%3B%0Afont%2Dsize%3A%202em%3B%0Abackground%3A%20%23f5f0fa%3B%0Afont%2Dfamily%3A%20system%2Dui%2C%20%2Dapple%2Dsystem%2C%20BlinkMacSystemFont%2C%20%22Segoe%20UI%22%2C%20Roboto%2C%20sans%2Dserif%3B%0A%7D%0A%3Alink%2C%0A%3Avisited%20%7B%0Atext%2Ddecoration%3A%20none%3B%0Acolor%3A%20%237a5cbf%3B%0A%7D%0A%23controls%20%3Aactive%20%7B%0Acolor%3A%20%23b8a3d9%20%21important%3B%0A%7D%0A%23controls%20%3Afocus%20%7B%0Aoutline%3A%201px%20dotted%20%237a5cbf%3B%0A%7D%0Ah1%2C%20h2%2C%20h3%2C%20h4%20%7B%0Afont%2Dsize%3A%20100%25%3B%0Amargin%3A%200%3B%0Apadding%3A%200%3B%0Afont%2Dweight%3A%20inherit%3B%0A%7D%0Aul%2C%20pre%20%7B%0Amargin%3A%200%3B%0Aline%2Dheight%3A%201em%3B%0A%7D%0Ahtml%2C%20body%20%7B%0Amargin%3A%200%3B%0Apadding%3A%200%3B%0A%7D%0Ablockquote%2C%20q%20%7B%0Afont%2Dstyle%3A%20italic%3B%0A%7D%0Ablockquote%20%7B%0Apadding%3A%200%202em%200%2E5em%3B%0Amargin%3A%200%201%2E5em%200%2E5em%3B%0Atext%2Dalign%3A%20center%3B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Ablockquote%20p%20%7B%0Amargin%3A%200%3B%0A%7D%0Ablockquote%20i%20%7B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0Ablockquote%20b%20%7B%0Adisplay%3A%20block%3B%0Amargin%2Dtop%3A%200%2E5em%3B%0Afont%2Dweight%3A%20normal%3B%0Afont%2Dsize%3A%20smaller%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0Ablockquote%20b%20i%20%7B%0Afont%2Dstyle%3A%20italic%3B%0A%7D%0Akbd%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Asup%20%7B%0Afont%2Dsize%3A%20smaller%3B%0Aline%2Dheight%3A%201px%3B%0A%7D%0A%2Eslide%20code%20%7B%0Apadding%3A%202px%200%2E25em%3B%0Afont%2Dweight%3A%20bold%3B%0Acolor%3A%20%236b4a99%3B%0A%7D%0A%2Eslide%20h1%20code%2C%0A%2Eslide%20h2%20code%2C%0A%2Eslide%20h3%20code%2C%0A%2Eslide%20h4%20code%20%7B%0Acolor%3A%20inherit%3B%0Abackground%3A%20transparent%3B%0A%7D%0A%2Eslide%20code%2Ebad%2C%0Acode%20del%20%7B%0Acolor%3A%20%23c97bb8%3B%0A%7D%0A%2Eslide%20code%2Eold%20%7B%0Acolor%3A%20%23c9bfd9%3B%0A%7D%0A%2Eslide%20pre%20%7B%0Apadding%3A%200%3B%0Amargin%3A%200%2E25em%200%200%2E5em%200%2E5em%3B%0Acolor%3A%20%236b4a99%3B%0Afont%2Dsize%3A%2090%25%3B%0A%7D%0A%2Eslide%20pre%20code%20%7B%0Adisplay%3A%20block%3B%0A%7D%0A%2Eslide%20ul%20%7B%0Amargin%2Dleft%3A%205%25%3B%0Amargin%2Dright%3A%207%25%3B%0Alist%2Dstyle%3A%20disc%3B%0A%7D%0A%2Eslide%20li%20%7B%0Amargin%2Dtop%3A%200%2E75em%3B%0Amargin%2Dright%3A%200%3B%0A%7D%0A%2Eslide%20ul%20ul%20%7B%0Aline%2Dheight%3A%201%3B%0A%7D%0A%2Eslide%20ul%20ul%20li%20%7B%0Amargin%3A%200%2E2em%3B%0Afont%2Dsize%3A%2085%25%3B%0Alist%2Dstyle%3A%20square%3B%0A%7D%0A%2Eslide%20img%2Eleader%20%7B%0Adisplay%3A%20block%3B%0Amargin%3A%200%20auto%3B%0A%7D%0Adiv%23header%2C%0Adiv%23footer%20%7B%0Abackground%3A%20%238a6fb5%3B%0Acolor%3A%20%23f5f0fa%3B%0Afont%2Dfamily%3A%20system%2Dui%2C%20%2Dapple%2Dsystem%2C%20BlinkMacSystemFont%2C%20%22Segoe%20UI%22%2C%20Roboto%2C%20sans%2Dserif%3B%0A%7D%0Adiv%23footer%20%7B%0Afont%2Dsize%3A%200%2E5em%3B%0Afont%2Dweight%3A%20bold%3B%0Apadding%3A%201em%200%3B%0A%7D%0A%23footer%20h1%2C%0A%23footer%20h2%20%7B%0Adisplay%3A%20block%3B%0Apadding%3A%200%201em%3B%0A%7D%0A%23footer%20h2%20%7B%0Afont%2Dstyle%3A%20italic%3B%0A%7D%0Adiv%2Elong%20%7B%0Afont%2Dsize%3A%200%2E75em%3B%0A%7D%0A%2Eslide%20h1%20%7B%0Aposition%3A%20absolute%3B%0Atop%3A%200%2E7em%3B%0Aleft%3A%2087px%3B%0Az%2Dindex%3A%201%3B%0Amargin%3A%200%3B%0Apadding%3A%200%2E3em%200%200%2050px%3B%0Awhite%2Dspace%3A%20nowrap%3B%0Afont%3A%20bold%20150%25%2F1em%20system%2Dui%2C%20%2Dapple%2Dsystem%2C%20sans%2Dserif%3B%0Acolor%3A%20%23f5f0fa%3B%0Abackground%3A%20%238a6fb5%3B%0A%7D%0A%2Eslide%20h3%20%7B%0Afont%2Dsize%3A%20130%25%3B%0A%7D%0Ah1%20abbr%20%7B%0Afont%2Dvariant%3A%20small%2Dcaps%3B%0A%7D%0Adiv%23controls%20%7B%0Aposition%3A%20fixed%3B%0Aleft%3A%2050%25%3B%0Abottom%3A%200%3B%0Awidth%3A%2050%25%3B%0Atext%2Dalign%3A%20right%3B%0Afont%3A%20bold%200%2E9em%20system%2Dui%2C%20%2Dapple%2Dsystem%2C%20sans%2Dserif%3B%0Apadding%3A%200%200%201em%200%3B%0Atop%3A%20auto%3B%0A%7D%0Adiv%23controls%20form%20%7B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Aright%3A%200%3B%0Awidth%3A%20100%25%3B%0Amargin%3A%200%3B%0Apadding%3A%200%3B%0A%7D%0A%23controls%20%23navLinks%20a%20%7B%0Apadding%3A%200%3B%0Amargin%3A%200%200%2E5em%3B%0Abackground%3A%20%23b8a3d9%3B%0Aborder%3A%20none%3B%0Acolor%3A%20%234a3870%3B%0Acursor%3A%20pointer%3B%0A%7D%0A%23controls%20%23navList%20%7B%0Aheight%3A%201em%3B%0A%7D%0A%23controls%20%23navList%20%23jumplist%20%7B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Aright%3A%200%3B%0Abackground%3A%20%23e8def5%3B%0Acolor%3A%20%234a3870%3B%0A%7D%0A%23currentSlide%20%7B%0Atext%2Dalign%3A%20center%3B%0Afont%2Dsize%3A%200%2E5em%3B%0Acolor%3A%20%238a6fb5%3B%0A%7D%0A%23slide0%20%7B%0Apadding%2Dtop%3A%203%2E5em%3B%0Afont%2Dsize%3A%2090%25%3B%0A%7D%0A%23slide0%20h1%20%7B%0Aposition%3A%20static%3B%0Amargin%3A%201em%200%200%3B%0Apadding%3A%200%3B%0Afont%3A%20bold%202em%20system%2Dui%2C%20%2Dapple%2Dsystem%2C%20sans%2Dserif%3B%0Awhite%2Dspace%3A%20normal%3B%0Acolor%3A%20%232a1f3d%3B%0Abackground%3A%20transparent%3B%0A%7D%0A%23slide0%20h2%20%7B%0Afont%3A%20bold%20italic%201em%20system%2Dui%2C%20%2Dapple%2Dsystem%2C%20sans%2Dserif%3B%0Amargin%3A%200%2E25em%3B%0A%7D%0A%23slide0%20h3%20%7B%0Amargin%2Dtop%3A%201%2E5em%3B%0Afont%2Dsize%3A%201%2E5em%3B%0A%7D%0A%23slide0%20h4%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Aul%2Eurls%20%7B%0Alist%2Dstyle%3A%20none%3B%0Adisplay%3A%20inline%3B%0Amargin%3A%200%3B%0A%7D%0A%2Eurls%20li%20%7B%0Adisplay%3A%20inline%3B%0Amargin%3A%200%3B%0A%7D%0A%2Enote%20%7B%0Adisplay%3A%20none%3B%0A%7D%0A%2Eexternal%20%7B%0Aborder%2Dbottom%3A%20none%3B%0A%7D%0A%2Eexternal%3Aafter%20%7B%0Acontent%3A%20%22%20%5C274F%22%3B%0Afont%2Dsize%3A%20smaller%3B%0Acolor%3A%20%23a890c9%3B%0A%7D%0A%2Eincremental%2C%0A%2Eincremental%20%2A%2C%0A%2Eincremental%20%2A%3Aafter%20%7B%0Acolor%3A%20%23e8def5%3B%0Avisibility%3A%20visible%3B%0A%7D%0Aimg%2Eincremental%20%7B%0Avisibility%3A%20hidden%3B%0A%7D%0A%2Eslide%20%2Ecurrent%20%7B%0Acolor%3A%20%239b6dc7%3B%0A%7D%0A" rel="stylesheet" type="text/css" media="projection" id="slideProj" />
+  <link href="data:text/css,%0A%2Elayout%20div%2C%0A%23footer%20%2A%2C%0A%23controlForm%20%2A%20%7B%0Adisplay%3A%20none%3B%0A%7D%0A%23footer%2C%0A%23controls%2C%0A%23controlForm%2C%0A%23navLinks%2C%0A%23toggle%20%7B%0Adisplay%3A%20block%3B%0Avisibility%3A%20visible%3B%0Amargin%3A%200%3B%0Apadding%3A%200%3B%0A%7D%0A%23toggle%20%7B%0Aposition%3A%20fixed%3B%0Atop%3A%200%3B%0Aright%3A%200%3B%0Apadding%3A%200%2E5em%3B%0A%7D%0A%0A%23slide0%20h1%2C%0A%23slide0%20h2%2C%0A%23slide0%20h3%2C%0A%23slide0%20h4%20%7B%0Aborder%3A%20none%3B%0Amargin%3A%200%3B%0A%7D%0A%23slide0%20h1%20%7B%0Apadding%2Dtop%3A%201%2E5em%3B%0A%7D%0A%2Eslide%20h1%20%7B%0Amargin%3A%201%2E5em%200%200%3B%0Apadding%2Dtop%3A%200%2E25em%3B%0Aborder%2Dtop%3A%201px%20solid%20%238a6fb5%3B%0Aborder%2Dbottom%3A%201px%20solid%20%23b8a3d9%3B%0A%7D%0A%23toggle%20%7B%0Aborder%3A%201px%20solid%20%23b8a3d9%3B%0Aborder%2Dwidth%3A%200%200%201px%201px%3B%0Abackground%3A%20%23f5f0fa%3B%0A%7D%0A" rel="stylesheet" type="text/css" media="screen" id="outlineStyle" />
+  <link href="data:text/css,%0A%2Eslide%2C%20ul%20%7B%0Apage%2Dbreak%2Dinside%3A%20avoid%3B%0Avisibility%3A%20visible%20%21important%3B%0A%7D%0Ah1%20%7B%0Apage%2Dbreak%2Dafter%3A%20avoid%3B%0A%7D%0Abody%20%7B%0Afont%2Dsize%3A%2012pt%3B%0Abackground%3A%20white%3B%0Afont%2Dfamily%3A%20system%2Dui%2C%20%2Dapple%2Dsystem%2C%20BlinkMacSystemFont%2C%20%22Segoe%20UI%22%2C%20Roboto%2C%20sans%2Dserif%3B%0A%7D%0A%2A%20%7B%0Acolor%3A%20%232a1f3d%3B%0A%7D%0A%23slide0%20h1%20%7B%0Afont%2Dsize%3A%20200%25%3B%0Aborder%3A%20none%3B%0Amargin%3A%200%2E5em%200%200%2E25em%3B%0A%7D%0A%23slide0%20h3%20%7B%0Amargin%3A%200%3B%0Apadding%3A%200%3B%0A%7D%0A%23slide0%20h4%20%7B%0Amargin%3A%200%200%200%2E5em%3B%0Apadding%3A%200%3B%0A%7D%0A%23slide0%20%7B%0Amargin%2Dbottom%3A%203em%3B%0A%7D%0Ah1%20%7B%0Aborder%2Dtop%3A%202pt%20solid%20%238a6fb5%3B%0Aborder%2Dbottom%3A%201px%20dotted%20%23c9bfd9%3B%0A%7D%0A%2Eextra%20%7B%0Abackground%3A%20transparent%20%21important%3B%0A%7D%0Adiv%2Eextra%2C%0Apre%2Eextra%2C%0A%2Eexample%20%7B%0Afont%2Dsize%3A%2010pt%3B%0Acolor%3A%20%234a3870%3B%0A%7D%0Aul%2Eextra%20a%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Ap%2Eexample%20%7B%0Adisplay%3A%20none%3B%0A%7D%0A%23header%20%7B%0Adisplay%3A%20none%3B%0A%7D%0A%23footer%20h1%20%7B%0Amargin%3A%200%3B%0Aborder%2Dbottom%3A%201px%20solid%3B%0Acolor%3A%20%238a6fb5%3B%0Afont%2Dstyle%3A%20italic%3B%0A%7D%0A%23footer%20h2%2C%0A%23controls%20%7B%0Adisplay%3A%20none%3B%0A%7D%0A%0A%2Elayout%2C%0A%2Elayout%20%2A%20%7B%0Adisplay%3A%20none%20%21important%3B%0A%7D%0A" rel="stylesheet" type="text/css" media="print" id="slidePrint" />
+  <link href="data:text/css,%0A%2Eslide%20%7B%0Avisibility%3A%20visible%20%21important%3B%0Aposition%3A%20static%20%21important%3B%0Apage%2Dbreak%2Dbefore%3A%20always%3B%0A%7D%0A%23slide0%20%7Bpage%2Dbreak%2Dbefore%3A%20avoid%3B%7D%0A" rel="stylesheet" type="text/css" media="projection" id="operaFix" />
+  <!-- S5 JS -->
+  <script type="text/javascript">// S5 v1.1 slides.js -- released into the Public Domain
+//
+// Please see http://www.meyerweb.com/eric/tools/s5/credits.html for information 
+// about all the wonderful and talented contributors to this code!
+
+var undef;
+var slideCSS = '';
+var snum = 0;
+var smax = 1;
+var incpos = 0;
+var number = undef;
+var s5mode = true;
+var defaultView = 'slideshow';
+var controlVis = 'visible';
+
+var isIE = navigator.appName == 'Microsoft Internet Explorer' ? 1 : 0;
+var isOp = navigator.userAgent.indexOf('Opera') > -1 ? 1 : 0;
+var isGe = navigator.userAgent.indexOf('Gecko') > -1 && navigator.userAgent.indexOf('Safari') < 1 ? 1 : 0;
+
+function hasClass(object, className) {
+	if (!object.className) return false;
+	return (object.className.search('(^|\\s)' + className + '(\\s|$)') != -1);
+}
+
+function hasValue(object, value) {
+	if (!object) return false;
+	return (object.search('(^|\\s)' + value + '(\\s|$)') != -1);
+}
+
+function removeClass(object,className) {
+	if (!object) return;
+	object.className = object.className.replace(new RegExp('(^|\\s)'+className+'(\\s|$)'), RegExp.$1+RegExp.$2);
+}
+
+function addClass(object,className) {
+	if (!object || hasClass(object, className)) return;
+	if (object.className) {
+		object.className += ' '+className;
+	} else {
+		object.className = className;
+	}
+}
+
+function GetElementsWithClassName(elementName,className) {
+	var allElements = document.getElementsByTagName(elementName);
+	var elemColl = new Array();
+	for (var i = 0; i< allElements.length; i++) {
+		if (hasClass(allElements[i], className)) {
+			elemColl[elemColl.length] = allElements[i];
+		}
+	}
+	return elemColl;
+}
+
+function isParentOrSelf(element, id) {
+	if (element == null || element.nodeName=='BODY') return false;
+	else if (element.id == id) return true;
+	else return isParentOrSelf(element.parentNode, id);
+}
+
+function nodeValue(node) {
+	var result = "";
+	if (node.nodeType == 1) {
+		var children = node.childNodes;
+		for (var i = 0; i < children.length; ++i) {
+			result += nodeValue(children[i]);
+		}		
+	}
+	else if (node.nodeType == 3) {
+		result = node.nodeValue;
+	}
+	return(result);
+}
+
+function slideLabel() {
+	var slideColl = GetElementsWithClassName('*','slide');
+	var list = document.getElementById('jumplist');
+	smax = slideColl.length;
+	for (var n = 0; n < smax; n++) {
+		var obj = slideColl[n];
+
+		var did = 'slide' + n.toString();
+		obj.setAttribute('id',did);
+		if (isOp) continue;
+
+		var otext = '';
+		var menu = obj.firstChild;
+		if (!menu) continue; // to cope with empty slides
+		while (menu && menu.nodeType == 3) {
+			menu = menu.nextSibling;
+		}
+	 	if (!menu) continue; // to cope with slides with only text nodes
+
+		var menunodes = menu.childNodes;
+		for (var o = 0; o < menunodes.length; o++) {
+			otext += nodeValue(menunodes[o]);
+		}
+		list.options[list.length] = new Option(n + ' : '  + otext, n);
+	}
+}
+
+function currentSlide() {
+	var cs;
+	if (document.getElementById) {
+		cs = document.getElementById('currentSlide');
+	} else {
+		cs = document.currentSlide;
+	}
+	cs.innerHTML = '<span id="csHere">' + snum + '<\/span> ' + 
+		'<span id="csSep">\/<\/span> ' + 
+		'<span id="csTotal">' + (smax-1) + '<\/span>';
+	if (snum == 0) {
+		cs.style.visibility = 'hidden';
+	} else {
+		cs.style.visibility = 'visible';
+	}
+}
+
+function go(step) {
+	if (document.getElementById('slideProj').disabled || step == 0) return;
+	var jl = document.getElementById('jumplist');
+	var cid = 'slide' + snum;
+	var ce = document.getElementById(cid);
+	if (incrementals[snum].length > 0) {
+		for (var i = 0; i < incrementals[snum].length; i++) {
+			removeClass(incrementals[snum][i], 'current');
+			removeClass(incrementals[snum][i], 'incremental');
+		}
+	}
+	if (step != 'j') {
+		snum += step;
+		lmax = smax - 1;
+		if (snum > lmax) snum = lmax;
+		if (snum < 0) snum = 0;
+	} else
+		snum = parseInt(jl.value);
+	var nid = 'slide' + snum;
+	var ne = document.getElementById(nid);
+	if (!ne) {
+		ne = document.getElementById('slide0');
+		snum = 0;
+	}
+	if (step < 0) {incpos = incrementals[snum].length} else {incpos = 0;}
+	if (incrementals[snum].length > 0 && incpos == 0) {
+		for (var i = 0; i < incrementals[snum].length; i++) {
+			if (hasClass(incrementals[snum][i], 'current'))
+				incpos = i + 1;
+			else
+				addClass(incrementals[snum][i], 'incremental');
+		}
+	}
+	if (incrementals[snum].length > 0 && incpos > 0)
+		addClass(incrementals[snum][incpos - 1], 'current');
+	ce.style.visibility = 'hidden';
+	ne.style.visibility = 'visible';
+	jl.selectedIndex = snum;
+	currentSlide();
+	number = 0;
+}
+
+function goTo(target) {
+	if (target >= smax || target == snum) return;
+	go(target - snum);
+}
+
+function subgo(step) {
+	if (step > 0) {
+		removeClass(incrementals[snum][incpos - 1],'current');
+		removeClass(incrementals[snum][incpos], 'incremental');
+		addClass(incrementals[snum][incpos],'current');
+		incpos++;
+	} else {
+		incpos--;
+		removeClass(incrementals[snum][incpos],'current');
+		addClass(incrementals[snum][incpos], 'incremental');
+		addClass(incrementals[snum][incpos - 1],'current');
+	}
+}
+
+function toggle() {
+	var slideColl = GetElementsWithClassName('*','slide');
+	var slides = document.getElementById('slideProj');
+	var outline = document.getElementById('outlineStyle');
+	if (!slides.disabled) {
+		slides.disabled = true;
+		outline.disabled = false;
+		s5mode = false;
+		fontSize('1em');
+		for (var n = 0; n < smax; n++) {
+			var slide = slideColl[n];
+			slide.style.visibility = 'visible';
+		}
+	} else {
+		slides.disabled = false;
+		outline.disabled = true;
+		s5mode = true;
+		fontScale();
+		for (var n = 0; n < smax; n++) {
+			var slide = slideColl[n];
+			slide.style.visibility = 'hidden';
+		}
+		slideColl[snum].style.visibility = 'visible';
+	}
+}
+
+function showHide(action) {
+	var obj = GetElementsWithClassName('*','hideme')[0];
+	switch (action) {
+	case 's': obj.style.visibility = 'visible'; break;
+	case 'h': obj.style.visibility = 'hidden'; break;
+	case 'k':
+		if (obj.style.visibility != 'visible') {
+			obj.style.visibility = 'visible';
+		} else {
+			obj.style.visibility = 'hidden';
+		}
+	break;
+	}
+}
+
+// 'keys' code adapted from MozPoint (http://mozpoint.mozdev.org/)
+function keys(key) {
+	if (!key) {
+		key = event;
+		key.which = key.keyCode;
+	}
+	if (key.which == 84) {
+		toggle();
+		return;
+	}
+	if (s5mode) {
+		switch (key.which) {
+			case 10: // return
+			case 13: // enter
+				if (window.event && isParentOrSelf(window.event.srcElement, 'controls')) return;
+				if (key.target && isParentOrSelf(key.target, 'controls')) return;
+				if(number != undef) {
+					goTo(number);
+					break;
+				}
+			case 32: // spacebar
+			case 34: // page down
+			case 39: // rightkey
+			case 40: // downkey
+				if(number != undef) {
+					go(number);
+				} else if (!incrementals[snum] || incpos >= incrementals[snum].length) {
+					go(1);
+				} else {
+					subgo(1);
+				}
+				break;
+			case 33: // page up
+			case 37: // leftkey
+			case 38: // upkey
+				if(number != undef) {
+					go(-1 * number);
+				} else if (!incrementals[snum] || incpos <= 0) {
+					go(-1);
+				} else {
+					subgo(-1);
+				}
+				break;
+			case 36: // home
+				goTo(0);
+				break;
+			case 35: // end
+				goTo(smax-1);
+				break;
+			case 67: // c
+				showHide('k');
+				break;
+		}
+		if (key.which < 48 || key.which > 57) {
+			number = undef;
+		} else {
+			if (window.event && isParentOrSelf(window.event.srcElement, 'controls')) return;
+			if (key.target && isParentOrSelf(key.target, 'controls')) return;
+			number = (((number != undef) ? number : 0) * 10) + (key.which - 48);
+		}
+	}
+	return false;
+}
+
+function clicker(e) {
+	number = undef;
+	var target;
+	if (window.event) {
+		target = window.event.srcElement;
+		e = window.event;
+	} else target = e.target;
+	if (target.getAttribute('href') != null || hasValue(target.rel, 'external') || isParentOrSelf(target, 'controls') || isParentOrSelf(target,'embed') || isParentOrSelf(target,'object')) return true;
+	if (!e.which || e.which == 1) {
+		if (!incrementals[snum] || incpos >= incrementals[snum].length) {
+			go(1);
+		} else {
+			subgo(1);
+		}
+	}
+}
+
+function findSlide(hash) {
+	var target = null;
+	var slides = GetElementsWithClassName('*','slide');
+	for (var i = 0; i < slides.length; i++) {
+		var targetSlide = slides[i];
+		if ( (targetSlide.name && targetSlide.name == hash)
+		 || (targetSlide.id && targetSlide.id == hash) ) {
+			target = targetSlide;
+			break;
+		}
+	}
+	while(target != null && target.nodeName != 'BODY') {
+		if (hasClass(target, 'slide')) {
+			return parseInt(target.id.slice(5));
+		}
+		target = target.parentNode;
+	}
+	return null;
+}
+
+function slideJump() {
+	if (window.location.hash == null) return;
+	var sregex = /^#slide(\d+)$/;
+	var matches = sregex.exec(window.location.hash);
+	var dest = null;
+	if (matches != null) {
+		dest = parseInt(matches[1]);
+	} else {
+		dest = findSlide(window.location.hash.slice(1));
+	}
+	if (dest != null)
+		go(dest - snum);
+}
+
+function fixLinks() {
+	var thisUri = window.location.href;
+	thisUri = thisUri.slice(0, thisUri.length - window.location.hash.length);
+	var aelements = document.getElementsByTagName('A');
+	for (var i = 0; i < aelements.length; i++) {
+		var a = aelements[i].href;
+		var slideID = a.match('\#slide[0-9]{1,2}');
+		if ((slideID) && (slideID[0].slice(0,1) == '#')) {
+			var dest = findSlide(slideID[0].slice(1));
+			if (dest != null) {
+				if (aelements[i].addEventListener) {
+					aelements[i].addEventListener("click", new Function("e",
+						"if (document.getElementById('slideProj').disabled) return;" +
+						"go("+dest+" - snum); " +
+						"if (e.preventDefault) e.preventDefault();"), true);
+				} else if (aelements[i].attachEvent) {
+					aelements[i].attachEvent("onclick", new Function("",
+						"if (document.getElementById('slideProj').disabled) return;" +
+						"go("+dest+" - snum); " +
+						"event.returnValue = false;"));
+				}
+			}
+		}
+	}
+}
+
+function externalLinks() {
+	if (!document.getElementsByTagName) return;
+	var anchors = document.getElementsByTagName('a');
+	for (var i=0; i<anchors.length; i++) {
+		var anchor = anchors[i];
+		if (anchor.getAttribute('href') && hasValue(anchor.rel, 'external')) {
+			anchor.target = '_blank';
+			addClass(anchor,'external');
+		}
+	}
+}
+
+function createControls() {
+	var controlsDiv = document.getElementById("controls");
+	if (!controlsDiv) return;
+	var hider = ' onmouseover="showHide(\'s\');" onmouseout="showHide(\'h\');"';
+	var hideDiv, hideList = '';
+	if (controlVis == 'hidden') {
+		hideDiv = hider;
+	} else {
+		hideList = hider;
+	}
+	controlsDiv.innerHTML = '<form action="#" id="controlForm"' + hideDiv + '>' +
+	'<div id="navLinks">' +
+	'<a accesskey="t" id="toggle" href="javascript:toggle();">&#216;<\/a>' +
+	'<a accesskey="z" id="prev" href="javascript:go(-1);">&laquo;<\/a>' +
+	'<a accesskey="x" id="next" href="javascript:go(1);">&raquo;<\/a>' +
+	'<div id="navList"' + hideList + '><select id="jumplist" onchange="go(\'j\');"><\/select><\/div>' +
+	'<\/div><\/form>';
+	if (controlVis == 'hidden') {
+		var hidden = document.getElementById('navLinks');
+	} else {
+		var hidden = document.getElementById('jumplist');
+	}
+	addClass(hidden,'hideme');
+}
+
+function fontScale() {  // causes layout problems in FireFox that get fixed if browser's Reload is used; same may be true of other Gecko-based browsers
+	if (!s5mode) return false;
+	var vScale = 22;  // both yield 32 (after rounding) at 1024x768
+	var hScale = 32;  // perhaps should auto-calculate based on theme's declared value?
+	if (window.innerHeight) {
+		var vSize = window.innerHeight;
+		var hSize = window.innerWidth;
+	} else if (document.documentElement.clientHeight) {
+		var vSize = document.documentElement.clientHeight;
+		var hSize = document.documentElement.clientWidth;
+	} else if (document.body.clientHeight) {
+		var vSize = document.body.clientHeight;
+		var hSize = document.body.clientWidth;
+	} else {
+		var vSize = 700;  // assuming 1024x768, minus chrome and such
+		var hSize = 1024; // these do not account for kiosk mode or Opera Show
+	}
+	var newSize = Math.min(Math.round(vSize/vScale),Math.round(hSize/hScale));
+	fontSize(newSize + 'px');
+	if (isGe) {  // hack to counter incremental reflow bugs
+		var obj = document.getElementsByTagName('body')[0];
+		obj.style.display = 'none';
+		obj.style.display = 'block';
+	}
+}
+
+function fontSize(value) {
+	if (!(s5ss = document.getElementById('s5ss'))) {
+		if (!isIE) {
+			document.getElementsByTagName('head')[0].appendChild(s5ss = document.createElement('style'));
+			s5ss.setAttribute('media','screen, projection');
+			s5ss.setAttribute('id','s5ss');
+		} else {
+			document.createStyleSheet();
+			document.s5ss = document.styleSheets[document.styleSheets.length - 1];
+		}
+	}
+	if (!isIE) {
+		while (s5ss.lastChild) s5ss.removeChild(s5ss.lastChild);
+		s5ss.appendChild(document.createTextNode('body {font-size: ' + value + ' !important;}'));
+	} else {
+		document.s5ss.addRule('body','font-size: ' + value + ' !important;');
+	}
+}
+
+function notOperaFix() {
+	slideCSS = document.getElementById('slideProj').href;
+	var slides = document.getElementById('slideProj');
+	var outline = document.getElementById('outlineStyle');
+	slides.setAttribute('media','screen');
+	outline.disabled = true;
+	if (isGe) {
+		slides.setAttribute('href','null');   // Gecko fix
+		slides.setAttribute('href',slideCSS); // Gecko fix
+	}
+	if (isIE && document.styleSheets && document.styleSheets[0]) {
+		document.styleSheets[0].addRule('img', 'behavior: url(ui/default/iepngfix.htc)');
+		document.styleSheets[0].addRule('div', 'behavior: url(ui/default/iepngfix.htc)');
+		document.styleSheets[0].addRule('.slide', 'behavior: url(ui/default/iepngfix.htc)');
+	}
+}
+
+function getIncrementals(obj) {
+	var incrementals = new Array();
+	if (!obj) 
+		return incrementals;
+	var children = obj.childNodes;
+	for (var i = 0; i < children.length; i++) {
+		var child = children[i];
+		if (hasClass(child, 'incremental')) {
+			if (child.nodeName == 'OL' || child.nodeName == 'UL') {
+				removeClass(child, 'incremental');
+				for (var j = 0; j < child.childNodes.length; j++) {
+					if (child.childNodes[j].nodeType == 1) {
+						addClass(child.childNodes[j], 'incremental');
+					}
+				}
+			} else {
+				incrementals[incrementals.length] = child;
+				removeClass(child,'incremental');
+			}
+		}
+		if (hasClass(child, 'show-first')) {
+			if (child.nodeName == 'OL' || child.nodeName == 'UL') {
+				removeClass(child, 'show-first');
+				if (child.childNodes[isGe].nodeType == 1) {
+					removeClass(child.childNodes[isGe], 'incremental');
+				}
+			} else {
+				incrementals[incrementals.length] = child;
+			}
+		}
+		incrementals = incrementals.concat(getIncrementals(child));
+	}
+	return incrementals;
+}
+
+function createIncrementals() {
+	var incrementals = new Array();
+	for (var i = 0; i < smax; i++) {
+		incrementals[i] = getIncrementals(document.getElementById('slide'+i));
+	}
+	return incrementals;
+}
+
+function defaultCheck() {
+	var allMetas = document.getElementsByTagName('meta');
+	for (var i = 0; i< allMetas.length; i++) {
+		if (allMetas[i].name == 'defaultView') {
+			defaultView = allMetas[i].content;
+		}
+		if (allMetas[i].name == 'controlVis') {
+			controlVis = allMetas[i].content;
+		}
+	}
+}
+
+// Key trap fix, new function body for trap()
+function trap(e) {
+	if (!e) {
+		e = event;
+		e.which = e.keyCode;
+	}
+	try {
+		modifierKey = e.ctrlKey || e.altKey || e.metaKey;
+	}
+	catch(e) {
+		modifierKey = false;
+	}
+	return modifierKey || e.which == 0;
+}
+
+function startup() {
+	defaultCheck();
+	if (!isOp) createControls();
+	slideLabel();
+	fixLinks();
+	externalLinks();
+	fontScale();
+	if (!isOp) {
+		notOperaFix();
+		incrementals = createIncrementals();
+		slideJump();
+		if (defaultView == 'outline') {
+			toggle();
+		}
+		document.onkeyup = keys;
+		document.onkeypress = trap;
+		document.onclick = clicker;
+	}
+}
+
+window.onload = startup;
+window.onresize = function(){setTimeout('fontScale()', 50);}</script>
+</head>
+<body>
+<div class="layout">
+<div id="controls"></div>
+<div id="currentSlide"></div>
+<div id="header"></div>
+<div id="footer">
+  <h1>Berlin Permacomputing Meet-Up</h1>
+  <h2>A world without EOLs?</h2>
+</div>
+</div>
+<div class="presentation">
+<div class="title-slide slide">
+  <h1 class="title">A world without EOLs?</h1>
+  <h3 class="author">Nemo | May 17th 02026</h3>
+  <h4 class="date">Berlin Permacomputing Meet-Up</h4>
+</div>
+<div id="about-me" class="slide section level1">
+<h1>About Me</h1>
+<ul>
+<li>Nemo</li>
+<li>https://captnemo.in/contact/</li>
+<li>nemo@endoflife.date</li>
+<li>Fintech, Security, Open-Source, Public Policy, Hacktivist</li>
+</ul>
+</div>
+<div id="agenda" class="slide section level1">
+<h1>Agenda</h1>
+<ol style="list-style-type: decimal">
+<li>About endoflife.date</li>
+<li>Learnings &amp; Insights</li>
+<li>Why do we have EOLs?</li>
+<li>(Bonus) Why does hardware expire?</li>
+</ol>
+</div>
+<div id="demo" class="slide section level1">
+<h1>Demo</h1>
+<ol style="list-style-type: decimal">
+<li>Homepage, Product Page</li>
+<li>Description, Policy Text</li>
+<li>Current Version, Table</li>
+<li>Product Identifiers, API</li>
+<li>Wiki, WebCAL, RSS</li>
+</ol>
+</div>
+<div id="endoflife.date-is-a" class="slide section level1">
+<h1>endoflife.date is a</h1>
+<p><strong>Semantic</strong> / <strong>community-moderated</strong> /
+<strong>wiki</strong> that tracks <strong>Lifecycle</strong> of
+<strong>Notable Products</strong></p>
+</div>
+<div id="some-numbers" class="slide section level1">
+<h1>Some Numbers</h1>
+<ul>
+<li>450+ products</li>
+<li>20M Web Impressions</li>
+<li>200K Web Visits</li>
+<li>1000s of companies</li>
+<li>1000+ product updates.</li>
+<li>2+TB/month API Bandwidth</li>
+</ul>
+</div>
+<div id="learnings" class="slide section level1">
+<h1>Learnings</h1>
+</div>
+<div id="everyone-cares-about-this" class="slide section level1">
+<h1><em>everyone</em> cares about this</h1>
+<p>Devices &gt; Operating Systems &gt; Everything else</p>
+</div>
+<div id="support-supported" class="slide section level1">
+<h1>Support != Supported</h1>
+<p>People care about:</p>
+<ol style="list-style-type: decimal">
+<li>Security Updates</li>
+<li>Bug Fixes</li>
+<li>New Features</li>
+</ol>
+</div>
+<div id="inventories-are-great" class="slide section level1">
+<h1>Inventories are great</h1>
+<ol style="list-style-type: decimal">
+<li>Software Bill of Materials (SBOM)</li>
+<li>Package URL (PURL)</li>
+</ol>
+</div>
+<div id="cves-are-a-lagging-indicator" class="slide section level1">
+<h1>CVEs are a lagging indicator</h1>
+<ul>
+<li>Is this supported?</li>
+<li>Can I upgrade?</li>
+</ul>
+<p>is a better/proactive way to think about patching.</p>
+</div>
+<div id="chip-obsolescence" class="slide section level1">
+<h1>Chip Obsolescence</h1>
+<p>International Institute of Obsolescence Management…</p>
+</div>
+<div id="part-3-a-world-without-eols" class="slide section level1">
+<h1>Part 3: A world without EOLs?</h1>
+<p>Why can’t we build software without expiry?</p>
+<p>What’s your threshold for running:</p>
+<ol style="list-style-type: decimal">
+<li>Insecure Software</li>
+<li>Unmaintained Software</li>
+<li>Broken Software</li>
+</ol>
+</div>
+<div id="can-you-avoid-breaking-software-with-spacetime" class="slide section level1">
+<h1>Can you avoid breaking software <em>with spacetime</em>?</h1>
+<p>Only sofware with no bugs is the one with no code.</p>
+<p>Every interface boundary is a time-bomb.</p>
+</div>
+<div id="examples-secureboot" class="slide section level1">
+<h1>Examples: SecureBoot</h1>
+<p>Some Windows devices still use Secure Boot certificates issued in
+2011, which will expire in June 2026.</p>
+</div>
+<div id="examples-tls-upgrade" class="slide section level1">
+<h1>Examples: TLS Upgrade</h1>
+<p>Your code works fine with TLS-1.0, but the servers can decide to not
+use it anymore</p>
+</div>
+<div id="examples-heartbleed-log4shell-reactshell" class="slide section level1">
+<h1>Examples: Heartbleed, Log4Shell, ReactShell</h1>
+<p>Your software breaks so badly that you have to fix it.</p>
+</div>
+<div id="examples-leap-second-2038-y2k-tzdata" class="slide section level1">
+<h1>Examples: Leap Second, 2038, Y2K, tzdata</h1>
+<p>Time is a tricky interface.</p>
+</div>
+<div id="examples-3g2gcdma-networks" class="slide section level1">
+<h1>Examples: 3G/2G/CDMA Networks</h1>
+<p>More G is obviously better.</p>
+</div>
+<div id="examples-commercial-changes" class="slide section level1">
+<h1>Examples: Commercial Changes</h1>
+<ul>
+<li>VMWare Licensing Changes</li>
+<li>Google Maps Commercial API Changes</li>
+<li>Twitter Third-Party client terms.</li>
+</ul>
+</div>
+<div id="examples-things-go-away" class="slide section level1">
+<h1>Examples: Things go away</h1>
+<ul>
+<li>NPAPI</li>
+<li>Manifest V2</li>
+</ul>
+</div>
+<div id="how-to-build-permanent-software" class="slide section level1">
+<h1>How to build permanent software</h1>
+<ol style="list-style-type: decimal">
+<li>Reinvent the universe.</li>
+<li>Maintain the universe.</li>
+<li>Shrink the universe.</li>
+<li></li>
+<li><del>Profit</del></li>
+</ol>
+</div>
+<div id="more-practically" class="slide section level1">
+<h1>More practically:</h1>
+<p>If I wanted my software to run in hundred years:</p>
+<ul>
+<li>Distribute complete VMs, and ensure your build tooling is
+included.</li>
+<li>Local-first <em>across-the-stack</em></li>
+<li>Target Win32-PE/x86_64 if you can.</li>
+</ul>
+</div>
+<div id="why-does-hardware-expire" class="slide section level1">
+<h1>Why does hardware expire?</h1>
+<p>(Pixel 3 story)</p>
+</div>
+<div id="closing-thought" class="slide section level1">
+<h1>Closing thought</h1>
+<p>Permaculture takes free labor from the nature. Computing doesn’t get
+this free-pass.</p>
+</div>
+</div>
+</body>
+</html>
