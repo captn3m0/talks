@@ -69,6 +69,8 @@ Various talks & Lectures that I have given
 
 32. [Stop Chasing CVEs](https://docs.google.com/presentation/d/1dWT54B5aB2CfIMLEmS_4ltS6kxlVFHlhGyPV8EpBpZ0/edit?usp=sharing). I gave the talk from earlier again at the OWASP Berlin meetup in Feb 2026. This time with some updated guidance around supply chain attacks.
 
+33. A world without EOLs - a talk about endoflife.date at the Berlin Permacomputing Meet-up. In the spirit of keeping the alive, it is in various formats: [s5](permacomputing/s5.html), [revealjs](permacomputing/revealjs.html), [slidy](permacomputing/slidy.html), [slideous](permacomputing/slideous.html), [dzslides](permacomputing/dzslides.html), [revealjs](permacomputing/revealjs.html), [beamer](permacomputing/beamer.pdf).
+
 A few more talks that I've done are on my
 [SpeakerDeck account](https://speakerdeck.com/captn3m0) and my
 [slides.com](https://slides.com/captn3m0/) profile page.
